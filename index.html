@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>王佳琦 · 个人简历</title>
+<meta name="description" content="翻译专业大二学生，C++ 算法竞赛 + Qt 桌面开发 + AI 应用全栈开发 + 游戏开发学习实践。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --font-mono:'JetBrains Mono','Fira Code','Courier New',monospace;
+  --font-zh:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+
+  --bg:#fafafa;
+  --surface:#ffffff;
+  --surface-2:#f6f7f9;
+  --text:#1f2937;
+  --text-2:#4b5563;
+  --text-3:#9ca3af;
+  --border:#eceef2;
+  --border-strong:#e2e5ea;
+
+  --accent:#2563eb;
+  --accent-text:#1d4ed8;
+  --accent-soft:#eff6ff;
+  --accent-soft-2:#dbeafe;
+
+  --shadow-sm:0 1px 2px rgba(17,24,39,0.04);
+  --shadow:0 2px 8px -2px rgba(17,24,39,0.06),0 1px 3px rgba(17,24,39,0.04);
+  --shadow-lg:0 12px 28px -10px rgba(17,24,39,0.12),0 4px 10px -4px rgba(17,24,39,0.06);
+  --nav-glass:rgba(255,255,255,0.85);
+  --radius:14px;
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--font-zh);
+  background:var(--bg);
+  color:var(--text);
+  font-size:16px;line-height:1.75;font-weight:400;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+::selection{background:var(--accent-soft-2);color:var(--accent-text)}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--accent-text);text-decoration:none;transition:color 0.2s ease}
+a:hover{color:var(--accent)}
+.container{width:100%;max-width:860px;margin:0 auto;padding:0 24px}
+@media(min-width:768px){.container{padding:0 32px}}
+
+/* 滚动进度条 */
+.scroll-progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--accent);z-index:2000}
+
+/* 导航 */
+.site-nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;height:58px;
+  background:var(--nav-glass);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+  transition:box-shadow 0.3s ease;
+}
+.site-nav.scrolled{box-shadow:0 4px 20px -8px rgba(17,24,39,0.1)}
+@media(min-width:768px){.site-nav{height:66px}}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:100%}
+.nav-brand{font-family:var(--font-mono);font-size:17px;font-weight:700;color:var(--text);letter-spacing:-0.02em;display:flex;align-items:center;gap:9px}
+.nav-dot{width:9px;height:9px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.nav-brand b{font-weight:700}
+.nav-links{display:none;list-style:none;gap:2px}
+@media(min-width:768px){.nav-links{display:flex;align-items:center}}
+.nav-links a{display:block;padding:7px 14px;border-radius:9px;font-size:14px;font-weight:500;color:var(--text-2);transition:all 0.2s ease}
+.nav-links a:hover{color:var(--accent-text);background:var(--surface-2)}
+.nav-links a.active{color:var(--accent-text);background:var(--accent-soft);font-weight:600}
+.hamburger{display:flex;flex-direction:column;justify-content:center;gap:5px;width:38px;height:38px;padding:8px;background:none;border:none;cursor:pointer}
+@media(min-width:768px){.hamburger{display:none}}
+.hamburger span{display:block;height:2px;width:100%;background:var(--text);border-radius:2px;transition:all 0.3s ease}
+.hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;top:58px;left:0;right:0;z-index:999;background:var(--nav-glass);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:10px 24px 18px;transform:translateY(-100%);opacity:0;pointer-events:none;transition:transform 0.3s ease,opacity 0.3s ease}
+.mobile-menu.open{transform:translateY(0);opacity:1;pointer-events:auto}
+.mobile-menu a{display:block;padding:12px 0;font-size:15px;font-weight:500;color:var(--text-2);border-bottom:1px solid var(--border)}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-menu a.active{color:var(--accent-text);font-weight:600}
+
+/* Hero */
+.hero{padding:120px 0 40px;border-bottom:1px solid var(--border)}
+@media(min-width:768px){.hero{padding:150px 0 48px}}
+.hero-top{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.hero-avatar{
+  width:60px;height:60px;border-radius:16px;background:var(--accent-soft);
+  border:1px solid var(--accent-soft-2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:26px;font-weight:900;color:var(--accent-text);font-family:var(--font-zh);flex-shrink:0;
+}
+.hero-name{font-size:34px;font-weight:900;letter-spacing:0.01em;line-height:1.15;font-family:var(--font-zh);color:var(--text)}
+@media(min-width:768px){.hero-name{font-size:44px}}
+.hero-name .dot{color:var(--accent)}
+.hero-alias{display:inline-block;font-size:12px;font-weight:500;color:var(--text-3);background:var(--surface-2);border:1px solid var(--border);padding:3px 12px;border-radius:999px;margin-top:10px}
+.hero-tagline{font-size:17px;font-weight:500;line-height:1.65;color:var(--text-2);margin:18px 0 16px}
+@media(min-width:768px){.hero-tagline{font-size:18px}}
+.hero-contact{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:13px;color:var(--text-3)}
+.hero-contact a{color:var(--text-3)}
+.hero-contact a:hover{color:var(--accent)}
+.hero-contact .sep{color:var(--border-strong)}
+.hero-contact .ico{margin-right:4px}
+.hero-divider{height:1px;background:var(--border);margin:22px 0}
+.hero-bio{font-size:15px;line-height:1.9;color:var(--text-2);max-width:720px}
+.hero-bio strong{color:var(--text);font-weight:700}
+
+/* 区块 */
+.section{margin:52px 0}
+.section-title{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+.section-title .bar{width:4px;height:24px;border-radius:2px;background:var(--accent);flex-shrink:0}
+.section-title h2{font-size:21px;font-weight:800;line-height:1.2;letter-spacing:0.01em;color:var(--text)}
+@media(min-width:768px){.section-title h2{font-size:23px}}
+.section-title .en{font-family:var(--font-mono);font-size:11px;font-weight:500;color:var(--text-3);text-transform:uppercase;letter-spacing:0.14em;margin-top:2px}
+
+/* 技能 */
+.skills-grid{display:grid;gap:16px}
+@media(min-width:768px){.skills-grid{grid-template-columns:repeat(2,1fr);gap:18px}}
+.skill-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px;
+  box-shadow:var(--shadow-sm);transition:transform 0.22s ease,box-shadow 0.22s ease,border-color 0.22s ease;
+}
+.skill-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--border-strong)}
+.skill-head{display:flex;align-items:center;gap:11px;margin-bottom:11px}
+.skill-icon{width:38px;height:38px;border-radius:10px;background:var(--accent-soft);border:1px solid var(--accent-soft-2);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.skill-card h3{font-size:16px;font-weight:700;color:var(--text)}
+.skill-card p{font-size:13px;color:var(--text-2);line-height:1.7;margin-bottom:14px}
+.skill-tags{display:flex;flex-wrap:wrap;gap:6px}
+.skill-tags span{font-family:var(--font-mono);font-size:11px;font-weight:500;padding:4px 11px;border-radius:7px;background:var(--surface-2);color:var(--text-2);border:1px solid var(--border);transition:all 0.15s ease}
+.skill-tags span:hover{border-color:var(--accent-soft-2);color:var(--accent-text)}
+.skill-tags span.highlight{background:var(--accent-soft);color:var(--accent-text);border-color:var(--accent-soft-2);font-weight:600}
+.skill-card.aigc-muted{opacity:0.85}
+.skill-card.aigc-muted .aigc-note{font-size:11px;color:var(--text-3);margin-top:10px;font-style:italic}
+
+/* 项目 */
+.subtitle{display:flex;align-items:center;gap:10px;margin:38px 0 16px;font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--text-3);text-transform:uppercase;letter-spacing:0.1em}
+.subtitle::before{content:'';width:7px;height:7px;border-radius:2px;background:var(--accent)}
+.project-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px;margin-bottom:14px;
+  box-shadow:var(--shadow-sm);transition:transform 0.22s ease,box-shadow 0.22s ease,border-color 0.22s ease;
+}
+@media(min-width:768px){.project-card{padding:24px}}
+.project-card:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:var(--border-strong)}
+.project-header{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin-bottom:8px}
+.project-name{font-size:16px;font-weight:700;color:var(--text)}
+.project-date{font-family:var(--font-mono);font-size:11px;font-weight:600;color:var(--accent-text);background:var(--accent-soft);border:1px solid var(--accent-soft-2);padding:2px 10px;border-radius:999px}
+.project-desc{font-size:14px;color:var(--text-2);line-height:1.8;margin-bottom:12px}
+.project-desc code{font-family:var(--font-mono);font-size:12.5px;background:var(--surface-2);color:var(--accent-text);padding:1px 6px;border-radius:5px}
+.project-meta{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:12px;color:var(--text-3);margin-bottom:12px}
+.project-meta span{display:flex;align-items:center;gap:5px}
+.project-tags{display:flex;flex-wrap:wrap;gap:6px}
+.project-tags span{font-family:var(--font-mono);font-size:11px;font-weight:500;padding:4px 11px;border-radius:7px;background:var(--surface-2);color:var(--text-2);border:1px solid var(--border);transition:all 0.15s ease}
+.project-tags span:hover{border-color:var(--accent-soft-2);color:var(--accent-text)}
+.project-tags span.accent-tag{background:var(--accent-soft);color:var(--accent-text);border-color:var(--accent-soft-2);font-weight:600}
+.project-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.project-links a{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:12px;font-weight:600;padding:6px 14px;border-radius:8px;background:var(--accent-soft);color:var(--accent-text);border:1px solid var(--accent-soft-2);transition:all 0.18s ease}
+.project-links a:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.project-links a svg{width:14px;height:14px}
+
+/* 时间线 */
+.timeline{list-style:none;position:relative;padding-left:24px}
+.timeline::before{content:'';position:absolute;left:6px;top:6px;bottom:6px;width:1.5px;background:var(--border-strong)}
+.timeline-item{position:relative;padding-bottom:24px}
+.timeline-item:last-child{padding-bottom:0}
+.timeline-item::before{content:'';position:absolute;left:-24px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--surface);border:3px solid var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.timeline-date{font-family:var(--font-mono);font-size:11px;font-weight:600;color:var(--accent-text);display:inline-block;background:var(--accent-soft);border:1px solid var(--accent-soft-2);padding:2px 10px;border-radius:999px;margin-bottom:6px}
+.timeline-title{font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px}
+.timeline-title .award{color:var(--accent-text);font-weight:700}
+.timeline-desc{font-size:13px;color:var(--text-2);line-height:1.75}
+
+/* 教育 */
+.edu-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow-sm)}
+.edu-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+.edu-icon{width:50px;height:50px;border-radius:13px;background:var(--accent-soft);border:1px solid var(--accent-soft-2);display:flex;align-items:center;justify-content:center;font-size:23px;flex-shrink:0}
+.edu-school{font-size:19px;font-weight:800;color:var(--text)}
+.edu-major{font-size:14px;color:var(--text-2);margin-top:2px}
+.edu-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.edu-tags span{font-family:var(--font-mono);font-size:11.5px;font-weight:500;padding:5px 12px;border-radius:8px;background:var(--surface-2);color:var(--text-2);border:1px solid var(--border)}
+
+/* 运营 */
+.ops-list{list-style:none;padding-left:0}
+.ops-list li{position:relative;padding:14px 0 14px 26px;border-bottom:1px dashed var(--border);font-size:14px;color:var(--text-2);line-height:1.75}
+.ops-list li:last-child{border-bottom:none}
+.ops-list li::before{content:'';position:absolute;left:4px;top:22px;width:8px;height:8px;border-radius:2px;background:var(--accent)}
+.ops-list li strong{color:var(--text);font-weight:700}
+
+/* 联系 */
+.contact-grid{display:grid;gap:14px}
+@media(min-width:768px){.contact-grid{grid-template-columns:repeat(2,1fr);gap:16px}}
+.contact-item{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--border);border-radius:13px;padding:17px 20px;box-shadow:var(--shadow-sm);transition:transform 0.18s ease,box-shadow 0.18s ease,border-color 0.18s ease}
+.contact-item:hover{transform:translateY(-2px);border-color:var(--border-strong);box-shadow:var(--shadow)}
+.contact-icon{width:42px;height:42px;border-radius:11px;background:var(--accent-soft);border:1px solid var(--accent-soft-2);color:var(--accent-text);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.contact-label{font-size:12px;color:var(--text-3);margin-bottom:2px}
+.contact-value{font-size:15px;font-weight:700;color:var(--text);word-break:break-all}
+.contact-value a{color:var(--text)}
+.contact-value a:hover{color:var(--accent)}
+
+/* 页脚 */
+.site-footer{padding:36px 0 52px;text-align:center;border-top:1px solid var(--border);margin-top:20px}
+.footer-text{font-family:var(--font-mono);font-size:12px;color:var(--text-3)}
+
+/* 返回顶部 */
+.back-top{position:fixed;right:22px;bottom:24px;width:42px;height:42px;border-radius:12px;background:var(--surface);color:var(--text-2);border:1px solid var(--border);cursor:pointer;font-size:17px;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow);opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity 0.3s ease,transform 0.3s ease,border-color 0.2s ease,color 0.2s ease;z-index:900}
+.back-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+.back-top:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+
+/* 入场动效 */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity 0.55s ease,transform 0.55s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:0.07s}
+.reveal-d2{transition-delay:0.14s}
+
+/* 打印 */
+@media print{
+  .site-nav,.hamburger,.mobile-menu,.scroll-progress,.back-top{display:none!important}
+  body{background:#fff!important;color:#000!important;font-size:11pt!important}
+  .hero{padding:0 0 16px!important;border-bottom:1px solid #ccc!important}
+  .project-card,.skill-card,.edu-card,.contact-item{box-shadow:none!important;border:1px solid #ccc!important;break-inside:avoid}
+  .reveal{opacity:1!important;transform:none!important}
+  a{color:#000!important;text-decoration:underline!important}
+  a[href]::after{content:' (' attr(href) ')'!important;font-size:9pt!important;color:#666!important}
+}
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<nav class="site-nav" id="navbar">
+  <div class="container nav-inner">
+    <a href="#hero" class="nav-brand"><span class="nav-dot"></span>&lt;<b>王佳琦</b>/&gt;</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero" data-section="hero">首页</a></li>
+      <li><a href="#skills" data-section="skills">技能</a></li>
+      <li><a href="#projects" data-section="projects">项目</a></li>
+      <li><a href="#education" data-section="education">教育</a></li>
+      <li><a href="#awards" data-section="awards">获奖</a></li>
+      <li><a href="#contact" data-section="contact">联系</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="菜单"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#hero" data-section="hero">首页</a>
+  <a href="#skills" data-section="skills">技能</a>
+  <a href="#projects" data-section="projects">项目</a>
+  <a href="#education" data-section="education">教育</a>
+  <a href="#awards" data-section="awards">获奖</a>
+  <a href="#contact" data-section="contact">联系</a>
+</div>
+
+<main>
+
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero-top">
+      <div class="hero-avatar">王</div>
+      <div>
+        <h1 class="hero-name">王佳琦<span class="dot">.</span></h1>
+      </div>
+    </div>
+    <span class="hero-alias">花名 · 竹心</span>
+    <p class="hero-tagline">翻译专业大二 · C++ 算法竞赛 + Qt 桌面开发 + AI 应用全栈开发</p>
+    <div class="hero-contact">
+      <a href="mailto:1744059451@qq.com"><span class="ico">✉</span>1744059451@qq.com</a>
+      <span class="sep">·</span>
+      <span><span class="ico">💬</span>微信 15314662965</span>
+      <span class="sep">·</span>
+      <span><span class="ico">📍</span>河南南阳</span>
+      <span class="sep">·</span>
+      <a href="https://github.com/YGtemple" target="_blank" rel="noopener"><span class="ico">🐙</span>github.com/YGtemple</a>
+    </div>
+    <div class="hero-divider"></div>
+    <p class="hero-bio">
+      郑州升达经贸管理学院翻译专业大二在读。以 <strong>C++</strong> 为主力语言参与程序设计竞赛，获<strong>码蹄杯省赛银奖</strong>、<strong>百度之星省赛银奖</strong>；通过 <strong>vibe coding</strong> 方式独立完成多款 AI 应用的全栈开发——从 C++ STL 数据结构到底层算法，从 Qt 桌面客户端到 AI Web 工作流编排。同时具备<strong>游戏开发（Cocos / Unity）</strong>学习实践，以及 GitHub 协作、Linux、Obsidian 知识库等工程化习惯。相信语言敏感度与算法严谨度的交叉，是长期壁垒。
+    </p>
+  </div>
+</section>
+
+<section class="section" id="skills">
+  <div class="container">
+    <div class="section-title"><span class="bar"></span><div><h2>专业技能</h2><div class="en">Skills</div></div></div>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-head"><div class="skill-icon">⚡</div><h3>算法竞赛</h3></div>
+        <p>以 C++ 为主力语言，沿 STL 与数据结构向下扎根，在码蹄杯、百度之星、蓝桥杯等赛事中打磨工程化思维。</p>
+        <div class="skill-tags"><span class="highlight">C++</span><span class="highlight">STL</span><span>C 语言</span><span>vector / deque</span><span>map / multimap</span><span>队列 / 栈 / 哈希</span><span>贪心</span><span>枚举 / 搜索 / 排序 / 二分</span><span>二进制底层</span></div>
+      </div>
+      <div class="skill-card reveal reveal-d1">
+        <div class="skill-head"><div class="skill-icon">🌐</div><h3>全栈开发</h3></div>
+        <p>从 Qt 桌面客户端到 AI Web 工作流编排，独立完成应用从设计到上线的全链路。</p>
+        <div class="skill-tags"><span class="highlight">Qt 6.7.0</span><span class="highlight">HTML/CSS/JS</span><span class="highlight">HiAgent 工作流</span><span>RESTful API</span><span>Netlify 部署</span><span>架构文档</span></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-head"><div class="skill-icon">🎮</div><h3>游戏开发</h3></div>
+        <p>具备 Cocos 与 Unity 游戏引擎的学习与实践经历，理解游戏对象、场景与交互的基本开发流程。</p>
+        <div class="skill-tags"><span class="highlight">Cocos</span><span class="highlight">Unity</span><span>游戏开发实践</span></div>
+      </div>
+      <div class="skill-card reveal reveal-d1">
+        <div class="skill-head"><div class="skill-icon">🧰</div><h3>工程协作</h3></div>
+        <p>熟练使用 GitHub 协作，掌握 Linux 基础命令，通过 Obsidian 搭建个人知识库，熟悉扣子、HiAgent 工作流与知识库搭建。</p>
+        <div class="skill-tags"><span class="highlight">GitHub 协作</span><span class="highlight">扣子 / HiAgent</span><span>Linux 基础</span><span>Obsidian</span><span>知识库</span></div>
+      </div>
+      <div class="skill-card aigc-muted reveal" style="grid-column:1/-1">
+        <div class="skill-head"><div class="skill-icon">🎨</div><h3>AIGC 图像工程</h3></div>
+        <p>ComfyUI 节点流搭建、云端 GPU 部署、大模型本地化等图像生成链路实践。</p>
+        <div class="skill-tags"><span>ComfyUI</span><span>SDXL</span><span>FLUX</span><span>AMD ROCm</span><span>Qwen3</span><span>LoRA</span><span>提示词工程</span></div>
+        <p class="aigc-note">* 本方向为兴趣探索，掌握程度一般，未作为主攻领域。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <div class="container">
+    <div class="section-title"><span class="bar"></span><div><h2>项目经历</h2><div class="en">Projects</div></div></div>
+
+    <div class="subtitle">AI Web Coding</div>
+
+    <div class="project-card reveal">
+      <div class="project-header"><span class="project-name">智言（TEDify V2）</span><span class="project-date">2026</span></div>
+      <p class="project-desc">面向路演、面试、会议、公开演讲等场景的个人表达训练系统。设计六步闭环流程：用户表达画像（17 个画像字段）→ 基线测试 → 口述分析 → 多维评分（结构/连贯/场景/风格 + Rubric）→ 训练任务 → 进步报告。基于 HiAgent 工作流 + HTML 前端。</p>
+      <div class="project-meta"><span>🌐 Web 应用</span><span>🤖 HiAgent 工作流</span></div>
+      <div class="project-tags"><span class="accent-tag">HiAgent</span><span class="accent-tag">HTML/CSS/JS</span><span>RESTful API</span><span>vibe coding</span></div>
+      <div class="project-links"><a href="https://github.com/YGtemple/zhiyan" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a></div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-header"><span class="project-name">融研智笔 — Web 端</span><span class="project-date">2026</span></div>
+      <p class="project-desc">英语写作 AI 智能体 Web 应用。HiAgent 后端（语法纠错、文本润色、评分适配、知识库管理）+ HTML/CSS/JS 响应式前端，部署至 Netlify。覆盖七类考试评分标准，润色适配度 ≥92%。</p>
+      <div class="project-meta"><span>🌐 Web 应用</span><span>📄 学术论文产出</span></div>
+      <div class="project-tags"><span class="accent-tag">HiAgent</span><span class="accent-tag">HTML/CSS/JS</span><span>Netlify</span><span>vibe coding</span></div>
+      <div class="project-links"><a href="https://github.com/YGtemple/rongyan" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a></div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-header"><span class="project-name">智序 — AI 日程助手</span><span class="project-date">2026</span></div>
+      <p class="project-desc">TRAE AI 创造力大赛参赛作品。纯前端单 HTML 实现，零后端依赖、零第三方 CDN。v2.0 含 14 项升级：周日月三视图、周期性任务、AI 智能编排、离线 NLP、多格式导出、5 类职业模板。Aurora Glass 设计语言。</p>
+      <div class="project-meta"><span>🌐 单文件 Web</span><span>🏆 TRAE 大赛</span></div>
+      <div class="project-tags"><span class="accent-tag">纯前端</span><span class="accent-tag">HTML/CSS/JS</span><span>localStorage</span><span>vibe coding</span></div>
+      <div class="project-links"><a href="https://github.com/YGtemple/zhixu" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a></div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-header"><span class="project-name">长隆灵犀 — AI 智慧伴游</span><span class="project-date">2026</span></div>
+      <p class="project-desc">2026 AI 先锋未来人才大赛参赛作品。以游客情绪和家庭体验为核心的实时伴游 Agent。三阶段框架：游前感知偏好 → 游中实时陪伴（排队/下雨/疲惫时重规划）→ 游后内容留存（纪念册+知识卡+短视频脚本）。3 人团队协作，负责产品研究与 AI 工作流搭建。</p>
+      <div class="project-meta"><span>🌐 概念原型</span><span>🏆 AI 先锋大赛</span></div>
+      <div class="project-tags"><span class="accent-tag">HTML/CSS</span><span>AI Agent</span><span>产品研究</span></div>
+      <div class="project-links"><a href="https://github.com/YGtemple/changlong" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a></div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-header"><span class="project-name">智能题库与学习分析平台</span><span class="project-date">2026</span></div>
+      <p class="project-desc">面向大学生期末复习场景。独立完成从战略定位到技术架构的全链路设计，输出七份架构文档（战略定位、总体架构、API、数据库、AI 服务、安全合规、运维部署），规划 MVP → 核心闭环 → 商业化 → 微服务升级四阶段演进路径。</p>
+      <div class="project-meta"><span>📐 架构设计</span><span>📄 7 份技术文档</span></div>
+      <div class="project-tags"><span class="accent-tag">系统架构</span><span>API 设计</span><span>数据库设计</span><span>AI 服务</span></div>
+      <div class="project-links"><a href="https://github.com/YGtemple/zhinengtiku" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a></div>
+    </div>
+
+    <div class="subtitle">Qt 桌面程序</div>
+
+    <div class="project-card reveal">
+      <div class="project-header"><span class="project-name">融研智笔 — Qt 桌面端</span><span class="project-date">2026</span></div>
+      <p class="project-desc">英语写作智能体的 Windows 跨平台桌面客户端，基于 Qt 6.7.0 开发。与 Web 端共享同一套 RESTful API，覆盖四六级、专四专八、考研英语、雅思托福七类考试评分标准。</p>
+      <div class="project-meta"><span>🖥️ Qt Widgets</span><span>📐 .ui 布局文件</span></div>
+      <div class="project-tags"><span class="accent-tag">Qt 6.7.0</span><span class="accent-tag">C++</span><span>QWidget</span><span>信号槽</span></div>
+      <div class="project-links"><a href="https://github.com/YGtemple/rongyan" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a></div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-header"><span class="project-name">Qt 计时器</span><span class="project-date">2025</span></div>
+      <p class="project-desc">基于 Qt QTimer 与 QWidget 开发的桌面计时器工具，含开始/暂停/重置功能。</p>
+      <div class="project-meta"><span>🖥️ Qt Widgets</span><span>⏱️ QTimer</span></div>
+      <div class="project-tags"><span class="accent-tag">Qt</span><span class="accent-tag">C++</span><span>QTimer</span><span>QWidget</span></div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-header"><span class="project-name">Qt 计算器</span><span class="project-date">2025</span></div>
+      <p class="project-desc">基于 Qt 信号槽机制开发的桌面计算器，支持基础四则运算。</p>
+      <div class="project-meta"><span>🖥️ Qt Widgets</span><span>🔢 四则运算</span></div>
+      <div class="project-tags"><span class="accent-tag">Qt</span><span class="accent-tag">C++</span><span>信号槽</span></div>
+    </div>
+
+    <div class="subtitle">C++ 底层开发</div>
+
+    <div class="project-card reveal">
+      <div class="project-header"><span class="project-name">通讯录管理系统</span><span class="project-date">2025</span></div>
+      <p class="project-desc">基于 C 语言风格的结构体与静态数组实现，最大容量 1000 条联系人。支持增删改查、清空全部、console 交互菜单六项功能，字段涵盖姓名、性别、年龄、电话、住址。</p>
+      <div class="project-meta"><span>💻 Console 应用</span><span>📏 ~380 行</span></div>
+      <div class="project-tags"><span class="accent-tag">C++</span><span>struct</span><span>数组</span><span>指针</span><span>switch-case</span></div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-header"><span class="project-name">STL 评委打分系统</span><span class="project-date">2025</span></div>
+      <p class="project-desc">5 名选手由 10 位评委分别打分，利用 <code>deque</code> 双端队列存储分数便于头尾删除，<code>sort</code> 排序后去掉一个最高分和一个最低分，求剩余 8 个分数的平均值作为最终成绩。</p>
+      <div class="project-meta"><span>💻 Console 应用</span><span>📏 ~150 行</span></div>
+      <div class="project-tags"><span class="accent-tag">C++</span><span class="accent-tag">STL</span><span>vector</span><span>deque</span><span>algorithm</span></div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-header"><span class="project-name">STL 员工分组系统</span><span class="project-date">2025</span></div>
+      <p class="project-desc">运用 C++ STL 容器实现员工信息管理与部门分组。通过 <code>vector</code> 存储 10 名员工（姓名 + 随机工资），再使用 <code>multimap</code> 按部门编号（策划 / 研发 / 美工）进行键值对分组存储，支持按部门遍历输出。</p>
+      <div class="project-meta"><span>💻 Console 应用</span><span>📏 ~100 行</span></div>
+      <div class="project-tags"><span class="accent-tag">C++</span><span class="accent-tag">STL</span><span>vector</span><span>multimap</span><span>rand</span></div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-header"><span class="project-name">员工管理系统 — Boss 类</span><span class="project-date">2025</span></div>
+      <p class="project-desc">C++ 面向对象练习项目，Boss 类继承员工基类，重写 <code>showInfo</code> 与 <code>getdeptid_name</code> 虚函数，实现多态输出员工信息（编号、姓名、部门、岗位、职责）。</p>
+      <div class="project-meta"><span>💻 Console 应用</span><span>📏 ~20 行</span></div>
+      <div class="project-tags"><span class="accent-tag">C++</span><span>类与对象</span><span>继承</span><span>多态</span></div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="education">
+  <div class="container">
+    <div class="section-title"><span class="bar"></span><div><h2>教育经历</h2><div class="en">Education</div></div></div>
+    <div class="edu-card reveal">
+      <div class="edu-row">
+        <div class="edu-icon">🎓</div>
+        <div>
+          <div class="edu-school">郑州升达经贸管理学院</div>
+          <div class="edu-major">翻译专业 · 本科 · 大二在读</div>
+        </div>
+      </div>
+      <div class="edu-tags">
+        <span>英语四级</span>
+        <span>全国计算机二级 C 语言</span>
+        <span>码蹄杯省赛银奖</span>
+        <span>百度之星省赛银奖</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="awards">
+  <div class="container">
+    <div class="section-title"><span class="bar"></span><div><h2>竞赛获奖</h2><div class="en">Awards</div></div></div>
+    <ul class="timeline">
+      <li class="timeline-item reveal">
+        <span class="timeline-date">2026.06 · 程序设计</span>
+        <div class="timeline-title">码蹄杯程序设计大赛省赛 · <span class="award">银奖</span></div>
+        <p class="timeline-desc">以 C++ 出战省赛获银奖。</p>
+      </li>
+      <li class="timeline-item reveal">
+        <span class="timeline-date">2026.06 · 程序设计</span>
+        <div class="timeline-title">第 22 届百度之星程序设计大赛省赛 · <span class="award">银奖</span></div>
+        <p class="timeline-desc">以 C++ 参与算法竞赛，获省赛银奖。</p>
+      </li>
+      <li class="timeline-item reveal">
+        <span class="timeline-date">2026.07 · 黑客松</span>
+        <div class="timeline-title">Adventure X 中原黑客松 · <span class="award">最佳创新奖</span></div>
+        <p class="timeline-desc">48 小时极限开发，将 AIGC 能力转化为可演示产品。</p>
+      </li>
+      <li class="timeline-item reveal">
+        <span class="timeline-date">2026.07 · 线下赛</span>
+        <div class="timeline-title">Trae 郑州线下赛 · <span class="award">最佳人气奖</span></div>
+        <p class="timeline-desc">凭借作品表达力与现场感染力获认可。</p>
+      </li>
+      <li class="timeline-item reveal">
+        <span class="timeline-date">2026 · 创造力大赛</span>
+        <div class="timeline-title">Trae AI 创造力大赛 · <span class="award">Top2000 · 先锋探索者</span></div>
+        <p class="timeline-desc">以智序 AI 日程助手参赛，获先锋探索者称号。</p>
+      </li>
+      <li class="timeline-item reveal">
+        <span class="timeline-date">校内 · 智能体</span>
+        <div class="timeline-title">校内智能体创新应用大赛 · <span class="award">三等奖 + 最受欢迎奖</span></div>
+        <p class="timeline-desc">大模型智能体场景化应用的实践，作品为融研智笔英语写作智能体。</p>
+      </li>
+      <li class="timeline-item reveal">
+        <span class="timeline-date">2026 · 未来人才</span>
+        <div class="timeline-title">2026 AI 先锋未来人才大赛 · <span class="award">入围晋级赛</span></div>
+        <p class="timeline-desc">以长隆灵犀 AI 智慧伴游作品参赛，入围晋级赛。</p>
+      </li>
+      <li class="timeline-item reveal">
+        <span class="timeline-date">2026.04 · 荣誉称号</span>
+        <div class="timeline-title">河南省 · <span class="award">「国家安全知识达人」称号</span></div>
+        <p class="timeline-desc">国家安全知识相关活动获省级称号。</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="campus">
+  <div class="container">
+    <div class="section-title"><span class="bar"></span><div><h2>校园分享与运营</h2><div class="en">Campus</div></div></div>
+    <ul class="ops-list">
+      <li class="reveal">依托<strong>翻译 + 全栈开发</strong>复合背景，在校内社团、科创工作室开展多场线下技术分享，覆盖零基础 AI 工具到进阶开发。</li>
+      <li class="reveal">联合发起<strong>「校园 AI&计算机交流社群」</strong>（网络工作室 · AI 小组），对接字节跳动火山引擎校园生态，完整设计社群 30 天落地行动计划，掌握线上社群维护、线下沙龙策划、教学素材制作全流程。</li>
+      <li class="reveal">长期在校内编程小组组织<strong>刷题互助</strong>，帮助零基础同学入门编程、备赛。</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-title"><span class="bar"></span><div><h2>联系方式</h2><div class="en">Contact</div></div></div>
+    <div class="contact-grid">
+      <div class="contact-item reveal">
+        <div class="contact-icon">📧</div>
+        <div><div class="contact-label">邮箱</div><div class="contact-value"><a href="mailto:1744059451@qq.com">1744059451@qq.com</a></div></div>
+      </div>
+      <div class="contact-item reveal">
+        <div class="contact-icon">💬</div>
+        <div><div class="contact-label">微信</div><div class="contact-value">15314662965</div></div>
+      </div>
+      <div class="contact-item reveal">
+        <div class="contact-icon">📍</div>
+        <div><div class="contact-label">所在地</div><div class="contact-value">河南南阳</div></div>
+      </div>
+      <div class="contact-item reveal">
+        <div class="contact-icon">🐙</div>
+        <div><div class="contact-label">GitHub</div><div class="contact-value"><a href="https://github.com/YGtemple" target="_blank" rel="noopener">github.com/YGtemple</a></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-text">&copy; 2026 王佳琦（竹心）· Built with vibe coding</p>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="返回顶部">↑</button>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click',()=>{
+  hamburger.classList.toggle('active');
+  mobileMenu.classList.toggle('open');
+});
+mobileMenu.querySelectorAll('a').forEach(link=>{
+  link.addEventListener('click',()=>{
+    hamburger.classList.remove('active');
+    mobileMenu.classList.remove('open');
+  });
+});
+
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a, .mobile-menu a');
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      const id = entry.target.getAttribute('id');
+      navLinks.forEach(link=>{
+        link.classList.toggle('active', link.getAttribute('data-section') === id);
+      });
+    }
+  });
+}, {root:null, rootMargin:'-40% 0px -50% 0px', threshold:0});
+sections.forEach(section=>observer.observe(section));
+
+const navbar = document.getElementById('navbar');
+const scrollProgress = document.getElementById('scrollProgress');
+const backTop = document.getElementById('backTop');
+window.addEventListener('scroll',()=>{
+  navbar.classList.toggle('scrolled', window.scrollY > 10);
+  const h = document.documentElement;
+  const scrolled = h.scrollTop / (h.scrollHeight - h.clientHeight);
+  scrollProgress.style.width = (scrolled * 100) + '%';
+  backTop.classList.toggle('show', window.scrollY > 500);
+});
+backTop.addEventListener('click',()=>{ window.scrollTo({top:0,behavior:'smooth'}); });
+
+const revealEls = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, {threshold:0.12});
+revealEls.forEach(el=>revealObserver.observe(el));
+</script>
+
+</body>
+</html>
