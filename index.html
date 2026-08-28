@@ -87,7 +87,7 @@ a:hover{color:var(--accent)}
 /* Hero */
 .hero{padding:120px 0 40px;border-bottom:1px solid var(--border)}
 @media(min-width:768px){.hero{padding:150px 0 48px}}
-.hero-top{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.hero-top{display:flex;align-items:center;gap:14px;margin-bottom:24px}
 .hero-avatar{
   width:60px;height:60px;border-radius:16px;background:var(--accent-soft);
   border:1px solid var(--accent-soft-2);
@@ -97,9 +97,6 @@ a:hover{color:var(--accent)}
 .hero-name{font-size:34px;font-weight:900;letter-spacing:0.01em;line-height:1.15;font-family:var(--font-zh);color:var(--text)}
 @media(min-width:768px){.hero-name{font-size:44px}}
 .hero-name .dot{color:var(--accent)}
-.hero-alias{display:inline-block;font-size:12px;font-weight:500;color:var(--text-3);background:var(--surface-2);border:1px solid var(--border);padding:3px 12px;border-radius:999px;margin-top:10px}
-.hero-tagline{font-size:17px;font-weight:500;line-height:1.65;color:var(--text-2);margin:18px 0 16px}
-@media(min-width:768px){.hero-tagline{font-size:18px}}
 .hero-contact{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:13px;color:var(--text-3)}
 .hero-contact a{color:var(--text-3)}
 .hero-contact a:hover{color:var(--accent)}
@@ -111,11 +108,16 @@ a:hover{color:var(--accent)}
 
 /* 区块 */
 .section{margin:52px 0}
-.section-title{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+.section-title{display:flex;align-items:center;gap:12px;margin-bottom:28px;cursor:pointer;user-select:none}
 .section-title .bar{width:4px;height:24px;border-radius:2px;background:var(--accent);flex-shrink:0}
 .section-title h2{font-size:21px;font-weight:800;line-height:1.2;letter-spacing:0.01em;color:var(--text)}
 @media(min-width:768px){.section-title h2{font-size:23px}}
 .section-title .en{font-family:var(--font-mono);font-size:11px;font-weight:500;color:var(--text-3);text-transform:uppercase;letter-spacing:0.14em;margin-top:2px}
+.fold-arrow{margin-left:auto;width:30px;height:30px;border-radius:9px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:var(--text-3);font-size:13px;font-weight:700;border:1px solid var(--border);background:var(--surface);transition:transform 0.3s ease,color 0.2s ease,border-color 0.2s ease,background-color 0.2s ease}
+.section-title:hover .fold-arrow{color:var(--accent-text);border-color:var(--accent-soft-2);background:var(--accent-soft)}
+.section.collapsed .fold-arrow{transform:rotate(-90deg)}
+.section.collapsed .section-title{margin-bottom:0}
+.section.collapsed > .container > :not(.section-title){display:none}
 
 /* 技能 */
 .skills-grid{display:grid;gap:16px}
@@ -221,6 +223,8 @@ a:hover{color:var(--accent)}
   .hero{padding:0 0 16px!important;border-bottom:1px solid #ccc!important}
   .project-card,.skill-card,.edu-card,.contact-item{box-shadow:none!important;border:1px solid #ccc!important;break-inside:avoid}
   .reveal{opacity:1!important;transform:none!important}
+  .section.collapsed > .container > :not(.section-title){display:block!important}
+  .fold-arrow{display:none!important}
   a{color:#000!important;text-decoration:underline!important}
   a[href]::after{content:' (' attr(href) ')'!important;font-size:9pt!important;color:#666!important}
 }
@@ -264,8 +268,6 @@ a:hover{color:var(--accent)}
         <h1 class="hero-name">王佳琦<span class="dot">.</span></h1>
       </div>
     </div>
-    <span class="hero-alias">花名 · 竹心</span>
-    <p class="hero-tagline">翻译专业大二 · C++ 算法竞赛 + Qt 桌面开发 + AI 应用全栈开发</p>
     <div class="hero-contact">
       <a href="mailto:1744059451@qq.com"><span class="ico">✉</span>1744059451@qq.com</a>
       <span class="sep">·</span>
@@ -664,6 +666,17 @@ const revealObserver = new IntersectionObserver((entries)=>{
   });
 }, {threshold:0.12});
 revealEls.forEach(el=>revealObserver.observe(el));
+
+// 折叠功能
+document.querySelectorAll('.section-title').forEach(title=>{
+  const arrow = document.createElement('span');
+  arrow.className = 'fold-arrow';
+  arrow.textContent = '▾';
+  title.appendChild(arrow);
+  title.addEventListener('click',()=>{
+    title.closest('.section').classList.toggle('collapsed');
+  });
+});
 </script>
 
 </body>
