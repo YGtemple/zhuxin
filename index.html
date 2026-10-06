@@ -168,6 +168,22 @@ a:hover{color:var(--accent)}
 .project-links a:hover{background:var(--accent);border-color:var(--accent);color:#fff}
 .project-links a svg{width:14px;height:14px}
 
+/* 卡片单独折叠（项目 / 短剧 / 经历） */
+.card-fold{margin-left:auto;display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;background:transparent;color:var(--text-3);transition:transform .2s ease,background .2s ease,color .2s ease;font-size:13px;line-height:1;flex-shrink:0}
+.project-header{cursor:pointer;user-select:none}
+.project-header:hover .project-name{color:var(--accent-text)}
+.drama-card .dc-name{display:flex;align-items:center;gap:8px;cursor:pointer;user-select:none}
+.drama-card .dc-name:hover{color:var(--accent-text)}
+.exp-card .timeline-title{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;cursor:pointer;user-select:none}
+.exp-card .timeline-title:hover{color:var(--accent-text)}
+.project-header:hover .card-fold,.drama-card .dc-name:hover .card-fold,.exp-card .timeline-title:hover .card-fold{background:var(--accent-soft);color:var(--accent-text)}
+.project-card.card-collapsed .card-fold,.drama-card.card-collapsed .card-fold,.exp-card.card-collapsed .card-fold{transform:rotate(-90deg)}
+.project-card.card-collapsed .project-header{margin-bottom:0}
+.project-card.card-collapsed .project-desc,.project-card.card-collapsed .project-meta,.project-card.card-collapsed .project-tags,.project-card.card-collapsed .project-links{display:none}
+.drama-card.card-collapsed .dc-name{margin-bottom:0}
+.drama-card.card-collapsed .dc-tags{display:none}
+.exp-card.card-collapsed .timeline-desc,.exp-card.card-collapsed .exp-tags{display:none}
+
 /* 时间线 */
 .timeline{list-style:none;position:relative;padding-left:24px}
 .timeline::before{content:'';position:absolute;left:6px;top:6px;bottom:6px;width:1.5px;background:var(--border-strong)}
@@ -814,6 +830,37 @@ document.querySelectorAll('.section-title').forEach(title=>{
     }
   });
 });
+
+// 卡片单独折叠（项目 / 短剧 / 经历）
+function makeCardFold(){
+  const a = document.createElement('span');
+  a.className = 'card-fold';
+  a.textContent = '▾';
+  a.setAttribute('aria-hidden', 'true');
+  return a;
+}
+function bindCardFold(card, header){
+  if(!header) return;
+  header.appendChild(makeCardFold());
+  header.setAttribute('role', 'button');
+  header.tabIndex = 0;
+  header.setAttribute('title', '点击折叠 / 展开');
+  header.setAttribute('aria-expanded', 'true');
+  const toggle = (e)=>{
+    const collapsed = card.classList.toggle('card-collapsed');
+    header.setAttribute('aria-expanded', String(!collapsed));
+  };
+  header.addEventListener('click', (e)=>{
+    if(e.target.closest('a')) return; // 不拦截卡片头部内的链接
+    toggle(e);
+  });
+  header.addEventListener('keydown', (e)=>{
+    if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(e); }
+  });
+}
+document.querySelectorAll('.project-card').forEach(card=>bindCardFold(card, card.querySelector('.project-header')));
+document.querySelectorAll('.drama-card').forEach(card=>bindCardFold(card, card.querySelector('.dc-name')));
+document.querySelectorAll('.exp-card').forEach(card=>bindCardFold(card, card.querySelector('.timeline-title')));
 </script>
 
 </body>
