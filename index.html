@@ -189,6 +189,26 @@ a:hover{color:var(--accent)}
 .exp-tags span{font-family:var(--font-mono);font-size:11px;font-weight:500;padding:4px 11px;border-radius:7px;background:var(--surface-2);color:var(--text-2);border:1px solid var(--border)}
 .exp-tags span.accent-tag{background:var(--accent-soft);color:var(--accent-text);border-color:var(--accent-soft-2);font-weight:600}
 
+/* AI 短剧 */
+.drama-banner{background:linear-gradient(135deg,var(--accent-soft),var(--surface));border:1px solid var(--accent-soft-2);border-radius:var(--radius);padding:24px;margin-bottom:14px;box-shadow:var(--shadow-sm)}
+.drama-position{font-size:15px;line-height:1.8;color:var(--text);font-weight:600;margin-bottom:18px}
+.drama-position b{color:var(--accent-text)}
+.drama-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:18px}
+@media(min-width:768px){.drama-stats{grid-template-columns:repeat(4,1fr)}}
+.drama-stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 12px;text-align:center}
+.drama-stat b{display:block;font-size:24px;font-weight:900;color:var(--accent-text);font-family:var(--font-mono);line-height:1.1}
+.drama-stat span{font-size:12px;color:var(--text-3);margin-top:4px;display:block}
+.drama-pipeline{font-size:13px;color:var(--text-2);line-height:1.8;background:var(--surface);border:1px dashed var(--border-strong);border-radius:10px;padding:12px 14px}
+.drama-grid{display:grid;gap:14px}
+@media(min-width:768px){.drama-grid{grid-template-columns:repeat(2,1fr)}}
+.drama-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow-sm);transition:transform 0.22s ease,box-shadow 0.22s ease,border-color 0.22s ease}
+.drama-card:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:var(--border-strong)}
+.drama-card .dc-name{font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px}
+.drama-card .dc-tags{display:flex;flex-wrap:wrap;gap:6px}
+.drama-card .dc-tags span{font-family:var(--font-mono);font-size:11px;font-weight:500;padding:3px 10px;border-radius:7px;background:var(--surface-2);color:var(--text-2);border:1px solid var(--border)}
+.drama-card .dc-tags span.accent-tag{background:var(--accent-soft);color:var(--accent-text);border-color:var(--accent-soft-2);font-weight:600}
+.drama-more{font-size:13px;color:var(--text-2);line-height:1.8;margin-top:16px;padding:14px 16px;background:var(--surface-2);border-radius:10px;border:1px solid var(--border)}
+
 /* 教育 */
 .edu-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow-sm)}
 .edu-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
@@ -255,6 +275,7 @@ a:hover{color:var(--accent)}
     <ul class="nav-links" id="navLinks" data-page-node-id="AXgcxgj6RnBwA6XgEnVcLo">
       <li data-page-node-id="mD3loEhZFMZkSyUYlMv1m3"><a href="#hero" data-section="hero" data-page-node-id="YZLK7btdAFR58ei7dsxKN8">首页</a></li>
       <li data-page-node-id="6sD6oBvS95JE7CBFG2ItBu"><a href="#skills" data-section="skills" data-page-node-id="LeUo5gF1PTUaKdyZ9SLP6B">技能</a></li>
+      <li><a href="#drama" data-section="drama">短剧</a></li>
       <li data-page-node-id="xtjeTu6PjYH25mwEa6Gah3"><a href="#projects" data-section="projects" data-page-node-id="7pSn3cAa8sdAPALiW8SuaO">项目</a></li>
       <li><a href="#experience" data-section="experience">经历</a></li>
       <li data-page-node-id="0SMfSqFky30WQJPCY4Qm8B"><a href="#education" data-section="education" data-page-node-id="YvFuPjNI1GYhYXJ2eoCuOC">教育</a></li>
@@ -268,6 +289,7 @@ a:hover{color:var(--accent)}
 <div class="mobile-menu" id="mobileMenu" data-page-node-id="JAjspYIy1NK3yC8LrvnZI4">
   <a href="#hero" data-section="hero" data-page-node-id="6DGubkofAnVDx5GarDpWLf">首页</a>
   <a href="#skills" data-section="skills" data-page-node-id="GUByFl1PwRUwo13lD9S4Qg">技能</a>
+  <a href="#drama" data-section="drama">短剧</a>
   <a href="#projects" data-section="projects" data-page-node-id="2bU7lezgBNK3QvU74kLxmM">项目</a>
   <a href="#experience" data-section="experience">经历</a>
   <a href="#education" data-section="education" data-page-node-id="nJ72GU9yvZJMMBvFOoNa39">教育</a>
@@ -298,7 +320,7 @@ a:hover{color:var(--accent)}
       <a href="https://github.com/YGtemple" target="_blank" rel="noopener" data-page-node-id="cfFAYzvK8hU5BnTI9che3A"><span class="ico" data-page-node-id="ubJakHzGguEMQzImxg6jym">🐙</span>github.com/YGtemple</a>
     </div>
     <div class="hero-divider" data-page-node-id="p5NCYrptYA2fKVsHEXpnHd"></div>
-    <p class="hero-tagline"><span class="pulse"></span>翻译 × 编程 跨界实践者 <span class="sep">·</span> C++ 算法竞赛 <span class="sep">·</span> Qt 桌面开发 <span class="sep">·</span> AI 应用全栈 <span class="sep">·</span> AIGC 创作</p>
+    <p class="hero-tagline"><span class="pulse"></span>翻译 × 编程 跨界实践者 <span class="sep">·</span> C++ 算法竞赛 <span class="sep">·</span> Qt 桌面开发 <span class="sep">·</span> AI 应用全栈 <span class="sep">·</span> AIGC 创作 <span class="sep">·</span> 真人写实 AI 短剧</p>
     <p class="hero-bio" data-page-node-id="EJF12ZH8ZExCnVzC9nO7gx">
       郑州升达经贸管理学院翻译专业大三在读。以 C++ 参与算法竞赛（码蹄杯、百度之星省赛银奖），从 Qt 桌面开发到 AI 应用全栈开发，兼具游戏开发与 AIGC 创作能力；习惯用 vibe coding 把想法落地为 Web 应用、Agent Skill 与微信小游戏，并在 B 站 / 抖音持续输出算法题解与 AI 项目演示。
     </p>
@@ -331,10 +353,68 @@ a:hover{color:var(--accent)}
       </div>
       <div class="skill-card reveal" style="grid-column:1/-1" data-page-node-id="5yrNvxMIJvYgQQIYU3yckT">
         <div class="skill-head" data-page-node-id="sG9o1ppLqTL4LpjaV8LoSP"><div class="skill-icon" data-page-node-id="FQuuZ3karKMZAkWDC85h69">🎨</div><h3 data-page-node-id="l3jtloQza1Qu8Vyf3ag49s">AIGC 内容创作</h3></div>
-        <p data-page-node-id="G9m7jacxB8D5gJBPOkiqCP">从图像生成到视频、动漫短剧的全链路 AIGC 内容创作，具备提示词工程、分镜脚本与美术资产规划能力。</p>
-        <div class="skill-tags" data-page-node-id="79TdWMjJM54SpnAF9vrR6N"><span class="highlight" data-page-node-id="gjwt3Z5WvNNmzvO1IrX2Su">ComfyUI</span><span class="highlight" data-page-node-id="2TISsoGM9dROugT70UFOXl">提示词工程</span><span data-page-node-id="LxKi1XO422T7X4RQHMKqmj">SDXL / FLUX</span><span data-page-node-id="LPgA9aNOm9FAiAEdRtZKpq">视频生成</span><span data-page-node-id="s6Kc2YOrhhyRz3TIwxHM4D">动漫短剧</span><span data-page-node-id="7ET9jFcOCDnb04GAG9xpK1">分镜脚本</span><span data-page-node-id="e7D5ahWAT997p9f2c7kKeE">LoRA</span></div>
+        <p data-page-node-id="G9m7jacxB8D5gJBPOkiqCP">从图像生成到视频、真人写实 AI 短剧的全链路 AIGC 内容创作，具备提示词工程、分镜脚本与美术资产规划能力。</p>
+        <div class="skill-tags" data-page-node-id="79TdWMjJM54SpnAF9vrR6N"><span class="highlight" data-page-node-id="gjwt3Z5WvNNmzvO1IrX2Su">ComfyUI</span><span class="highlight" data-page-node-id="2TISsoGM9dROugT70UFOXl">提示词工程</span><span data-page-node-id="LxKi1XO422T7X4RQHMKqmj">SDXL / FLUX</span><span data-page-node-id="LPgA9aNOm9FAiAEdRtZKpq">视频生成</span><span data-page-node-id="s6Kc2YOrhhyRz3TIwxHM4D">真人写实短剧</span><span data-page-node-id="7ET9jFcOCDnb04GAG9xpK1">分镜脚本</span><span data-page-node-id="e7D5ahWAT997p9f2c7kKeE">LoRA</span></div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="section" id="drama">
+  <div class="container">
+    <div class="section-title"><span class="bar"></span><div><h2>AI 短剧</h2><div class="en">Drama</div></div></div>
+    <div class="drama-banner reveal">
+      <p class="drama-position">核心方向：<b>真人写实风格 AI 短剧</b>（非动漫、非卡通），覆盖情感 / 都市 / 悬疑反转 / 年代 / 写实广告，以情感类为重点。</p>
+      <div class="drama-stats">
+        <div class="drama-stat"><b>59</b><span>正式项目</span></div>
+        <div class="drama-stat"><b>45</b><span>已产出成片</span></div>
+        <div class="drama-stat"><b>~26GB</b><span>素材与成片</span></div>
+        <div class="drama-stat"><b>6 步</b><span>标准化流水线</span></div>
+      </div>
+      <p class="drama-pipeline">流水线：01 剧本 → 02 资产 → 03 分镜 → 04 视频 → 05 成片 → 06 封面；成片统一 H.264 + AAC / yuv420p / +faststart，Windows 直接可播。</p>
+    </div>
+
+    <div class="subtitle">代表作</div>
+    <div class="drama-grid">
+      <div class="drama-card reveal">
+        <div class="dc-name">《15元猪脚饭》系列（含《红棚倒了》）</div>
+        <div class="dc-tags"><span class="accent-tag">都市</span><span>市井情感</span><span>系列短剧</span></div>
+      </div>
+      <div class="drama-card reveal reveal-d1">
+        <div class="dc-name">《国家的孩子·三千孤儿入内蒙 AI 复刻》</div>
+        <div class="dc-tags"><span class="accent-tag">年代</span><span>纪实复刻</span><span>体量最大 · 22 个成片</span></div>
+      </div>
+      <div class="drama-card reveal">
+        <div class="dc-name">《医生好》（含重制版）</div>
+        <div class="dc-tags"><span class="accent-tag">都市</span><span>医疗情感</span></div>
+      </div>
+      <div class="drama-card reveal reveal-d1">
+        <div class="dc-name">《The Choice 抉择》</div>
+        <div class="dc-tags"><span class="accent-tag">悬疑</span><span>反转</span></div>
+      </div>
+      <div class="drama-card reveal">
+        <div class="dc-name">《奔向太阳》</div>
+        <div class="dc-tags"><span class="accent-tag">年代</span><span>励志</span></div>
+      </div>
+      <div class="drama-card reveal reveal-d1">
+        <div class="dc-name">《重返二十岁的爸》</div>
+        <div class="dc-tags"><span class="accent-tag">都市</span><span>亲情</span></div>
+      </div>
+      <div class="drama-card reveal">
+        <div class="dc-name">《碳基的尊严》</div>
+        <div class="dc-tags"><span class="accent-tag">科幻</span><span>人文</span></div>
+      </div>
+      <div class="drama-card reveal reveal-d1">
+        <div class="dc-name">《AI 大战验证码》</div>
+        <div class="dc-tags"><span class="accent-tag">轻喜</span><span>技术幽默</span></div>
+      </div>
+      <div class="drama-card reveal">
+        <div class="dc-name">《调剂》</div>
+        <div class="dc-tags"><span class="accent-tag">现实</span><span>青春</span></div>
+      </div>
+    </div>
+
+    <div class="drama-more reveal">近期新作：《麦熟》《开山》《三红》《他不是怪小孩》《糖小康》《干净的女巫》《凝视的接力》。另产出《真人风格 AI 短剧创作技能全景调研报告》，涵盖模型横评、开源工作流、提示词公式与分档落地流程。</div>
   </div>
 </section>
 
@@ -720,6 +800,10 @@ const revealObserver = new IntersectionObserver((entries)=>{
   });
 }, {threshold:0.12});
 revealEls.forEach(el=>revealObserver.observe(el));
+// 兜底：部分环境下 IntersectionObserver 不及时触发，保证内容可见、不空白
+window.addEventListener('load',()=>{
+  setTimeout(()=>{ revealEls.forEach(el=>el.classList.add('visible')); }, 800);
+});
 
 // 折叠功能
 document.querySelectorAll('.section-title').forEach(title=>{
