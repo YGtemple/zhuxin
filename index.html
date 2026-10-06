@@ -4,7 +4,7 @@
 <meta charset="UTF-8" data-page-node-id="gjmJeSoNBVm6pjyyzeHUMd">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" data-page-node-id="GSgVBOZn5G9DAX8HcNE646">
 <title>王佳琦 · 个人简历</title>
-<meta name="description" content="翻译专业大二学生，C++ 算法竞赛 + Qt 桌面开发 + AI 应用全栈开发 + 游戏开发学习实践。" data-page-node-id="YZrggqIo8To9wXPwjceHma">
+<meta name="description" content="翻译专业大三学生，C++ 算法竞赛 + Qt 桌面开发 + AI 应用全栈开发 + 游戏开发学习实践。" data-page-node-id="YZrggqIo8To9wXPwjceHma">
 <link rel="preconnect" href="https://fonts.googleapis.com" data-page-node-id="lbt5xHZjJolb6tAe5V0bsu">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin data-page-node-id="7royZvFrUcgep2xTkoDE8F">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" data-page-node-id="g59icasgvbHOq37eDvcrGO">
@@ -105,6 +105,12 @@ a:hover{color:var(--accent)}
 .hero-divider{height:1px;background:var(--border);margin:22px 0}
 .hero-bio{font-size:15px;line-height:1.9;color:var(--text-2);max-width:720px}
 .hero-bio strong{color:var(--text);font-weight:700}
+.hero-badges{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:10px}
+.alias-badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:12px;font-weight:600;color:var(--accent-text);background:var(--accent-soft);border:1px solid var(--accent-soft-2);padding:4px 12px;border-radius:999px}
+.hero-tagline{display:flex;align-items:center;flex-wrap:wrap;gap:9px;font-size:14px;font-weight:600;color:var(--text);margin:18px 0 4px}
+.hero-tagline .pulse{width:8px;height:8px;border-radius:50%;background:#22c55e;flex-shrink:0;box-shadow:0 0 0 3px rgba(34,197,94,0.16)}
+.hero-tagline .sep{color:var(--text-3);font-weight:400}
+.hero-tagline em{font-style:normal;color:var(--accent-text);font-weight:700}
 
 /* 区块 */
 .section{margin:52px 0}
@@ -174,6 +180,15 @@ a:hover{color:var(--accent)}
 .timeline-title .award{color:var(--accent-text);font-weight:700}
 .timeline-desc{font-size:13px;color:var(--text-2);line-height:1.75}
 
+/* 实践经历（卡片式时间线） */
+.exp-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow-sm);margin-top:8px;transition:transform 0.22s ease,box-shadow 0.22s ease,border-color 0.22s ease}
+.exp-card:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:var(--border-strong)}
+.exp-card .timeline-title{font-size:15.5px}
+.exp-role{display:inline-block;font-family:var(--font-mono);font-size:11px;font-weight:600;color:var(--accent-text);background:var(--accent-soft);border:1px solid var(--accent-soft-2);padding:2px 10px;border-radius:999px;margin-left:8px;vertical-align:middle;white-space:nowrap}
+.exp-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.exp-tags span{font-family:var(--font-mono);font-size:11px;font-weight:500;padding:4px 11px;border-radius:7px;background:var(--surface-2);color:var(--text-2);border:1px solid var(--border)}
+.exp-tags span.accent-tag{background:var(--accent-soft);color:var(--accent-text);border-color:var(--accent-soft-2);font-weight:600}
+
 /* 教育 */
 .edu-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow-sm)}
 .edu-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
@@ -241,6 +256,7 @@ a:hover{color:var(--accent)}
       <li data-page-node-id="mD3loEhZFMZkSyUYlMv1m3"><a href="#hero" data-section="hero" data-page-node-id="YZLK7btdAFR58ei7dsxKN8">首页</a></li>
       <li data-page-node-id="6sD6oBvS95JE7CBFG2ItBu"><a href="#skills" data-section="skills" data-page-node-id="LeUo5gF1PTUaKdyZ9SLP6B">技能</a></li>
       <li data-page-node-id="xtjeTu6PjYH25mwEa6Gah3"><a href="#projects" data-section="projects" data-page-node-id="7pSn3cAa8sdAPALiW8SuaO">项目</a></li>
+      <li><a href="#experience" data-section="experience">经历</a></li>
       <li data-page-node-id="0SMfSqFky30WQJPCY4Qm8B"><a href="#education" data-section="education" data-page-node-id="YvFuPjNI1GYhYXJ2eoCuOC">教育</a></li>
       <li data-page-node-id="Ba3fA7qFAlKWQmneB3tIEi"><a href="#awards" data-section="awards" data-page-node-id="nXzqS63941hOss6k8l3OQa">获奖</a></li>
       <li data-page-node-id="DSxJCNvlW0abfGxsU2JF6x"><a href="#contact" data-section="contact" data-page-node-id="5eflRMGLsnBjBXKBMAbdir">联系</a></li>
@@ -253,6 +269,7 @@ a:hover{color:var(--accent)}
   <a href="#hero" data-section="hero" data-page-node-id="6DGubkofAnVDx5GarDpWLf">首页</a>
   <a href="#skills" data-section="skills" data-page-node-id="GUByFl1PwRUwo13lD9S4Qg">技能</a>
   <a href="#projects" data-section="projects" data-page-node-id="2bU7lezgBNK3QvU74kLxmM">项目</a>
+  <a href="#experience" data-section="experience">经历</a>
   <a href="#education" data-section="education" data-page-node-id="nJ72GU9yvZJMMBvFOoNa39">教育</a>
   <a href="#awards" data-section="awards" data-page-node-id="3H40YifcxbnucOQ4HrhsF3">获奖</a>
   <a href="#contact" data-section="contact" data-page-node-id="NYGYqntM45cQiTPmHSfMph">联系</a>
@@ -266,6 +283,9 @@ a:hover{color:var(--accent)}
       <div class="hero-avatar" data-page-node-id="mTnGArbKEj4qyzXc1yBXXW">王</div>
       <div data-page-node-id="spKbFCvF7gLgErmmtTULGG">
         <h1 class="hero-name" data-page-node-id="iut7zsspjZqWtEe5VrMLyA">王佳琦<span class="dot" data-page-node-id="oXrFww398u3iqqv967cFrO">.</span></h1>
+        <div class="hero-badges">
+          <span class="alias-badge">✍️ 花名 · 竹心</span>
+        </div>
       </div>
     </div>
     <div class="hero-contact" data-page-node-id="uiyAdEI7KcpYmvP9AO7s8l">
@@ -278,8 +298,9 @@ a:hover{color:var(--accent)}
       <a href="https://github.com/YGtemple" target="_blank" rel="noopener" data-page-node-id="cfFAYzvK8hU5BnTI9che3A"><span class="ico" data-page-node-id="ubJakHzGguEMQzImxg6jym">🐙</span>github.com/YGtemple</a>
     </div>
     <div class="hero-divider" data-page-node-id="p5NCYrptYA2fKVsHEXpnHd"></div>
+    <p class="hero-tagline"><span class="pulse"></span>翻译 × 编程 跨界实践者 <span class="sep">·</span> C++ 算法竞赛 <span class="sep">·</span> Qt 桌面开发 <span class="sep">·</span> AI 应用全栈 <span class="sep">·</span> AIGC 创作</p>
     <p class="hero-bio" data-page-node-id="EJF12ZH8ZExCnVzC9nO7gx">
-      郑州升达经贸管理学院翻译专业大二在读。以 C++ 参与算法竞赛（码蹄杯、百度之星省赛银奖），从 Qt 桌面开发到 AI 应用全栈开发，兼具游戏开发与 AIGC 创作能力。
+      郑州升达经贸管理学院翻译专业大三在读。以 C++ 参与算法竞赛（码蹄杯、百度之星省赛银奖），从 Qt 桌面开发到 AI 应用全栈开发，兼具游戏开发与 AIGC 创作能力；习惯用 vibe coding 把想法落地为 Web 应用、Agent Skill 与微信小游戏，并在 B 站 / 抖音持续输出算法题解与 AI 项目演示。
     </p>
   </div>
 </section>
@@ -503,6 +524,38 @@ a:hover{color:var(--accent)}
   </div>
 </section>
 
+<section class="section" id="experience">
+  <div class="container">
+    <div class="section-title"><span class="bar"></span><div><h2>实践经历</h2><div class="en">Experience</div></div></div>
+    <ul class="timeline">
+      <li class="timeline-item reveal">
+        <span class="timeline-date">2026.06 — 至今 · 校内</span>
+        <div class="exp-card">
+          <div class="timeline-title">校内信息化处 · AI 智汇小组（网络工作室 AI 小组）<span class="exp-role">负责人</span></div>
+          <p class="timeline-desc">负责小组日常管理与教学培训，规划 AIGC 与 CODING（氛围编程 / vibe coding）双方向培养体系；设计五周进阶课程与两次阶段考核，牵头招新宣讲会。主讲扣子 / HiAgent 工作流、ComfyUI 图像生成与 AI 视频生成，组织技术分享与实操演练，带领成员产出作品并组队参赛。</p>
+          <div class="exp-tags"><span class="accent-tag">AI 小组负责人</span><span>AIGC 培养体系</span><span>五周进阶课程</span><span>教学培训</span><span>宣讲会</span></div>
+        </div>
+      </li>
+      <li class="timeline-item reveal reveal-d1">
+        <span class="timeline-date">2026.09.22 · 郑州经开科技创新园</span>
+        <div class="exp-card">
+          <div class="timeline-title">郑州市企业出海会客厅揭牌仪式暨企业出海赋能专题峰会<span class="exp-role">志愿者签到组组长</span></div>
+          <p class="timeline-desc">指导单位郑州市工业和信息化局，志愿服务保障河南省翻译协会，活动约 200 位政府领导、国别嘉宾、专家及企业代表。本人任签到组组长（组员 4 名、共 5 人），统筹身份核验、信息登记、会议资料发放、证件核验与签到台账，并在高峰时段引导排队；参加 9.16 线上培训与 9.21 实地彩排，安排组员分工与轮换就餐、对接总协调人，保障流程准时。</p>
+          <div class="exp-tags"><span class="accent-tag">签到组组长</span><span>5 人团队统筹</span><span>会务保障</span><span>约 200 位嘉宾</span></div>
+        </div>
+      </li>
+      <li class="timeline-item reveal reveal-d2">
+        <span class="timeline-date">2026 · 外语能力竞赛</span>
+        <div class="exp-card">
+          <div class="timeline-title">外研社·国才杯「四新」专项赛 · 新农科方向<span class="exp-role">校赛选拔晋级省赛</span></div>
+          <p class="timeline-desc">2026 年「外研社·国才杯」「理解当代中国」全国大学生外语能力大赛英语组「四新」专项赛·新农科方向。赛事由北京外国语大学主办、外语教学与研究出版社承办，采用校赛选拔、省级复赛、全国决赛三级赛制；「四新」含新文科、新工科、新农科、新医科，要求结合专业知识完成英文研究报告并全英文答辩。本人经校赛选拔作为新农科方向选手晋级河南省级复赛，在王余成、孙燕冉、杜小芳老师指导下开展调研与英文研究报告撰写。</p>
+          <div class="exp-tags"><span class="accent-tag">新农科方向</span><span>校赛选拔晋级省赛</span><span>英文研究报告</span><span>全英文答辩</span><span>北外主办 · 外研社承办</span></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
 <section class="section" id="education" data-page-node-id="jjNyy1CTRKKuF2CaJ1mUhV">
   <div class="container" data-page-node-id="LBDEsL9gFgEGNxrB7c3WoM">
     <div class="section-title" data-page-node-id="7fKRSG0JlJ6JMEK4BEQdCi"><span class="bar" data-page-node-id="azmehOIV8ySPJ7D4ikubkJ"></span><div data-page-node-id="IrBqXEwVmdin31zkxbWbya"><h2 data-page-node-id="TKrXhWd92rPq7CfZgKoAOI">教育经历</h2><div class="en" data-page-node-id="nQ8nmEIC0ZKt7vSW7r76Sm">Education</div></div></div>
@@ -511,7 +564,7 @@ a:hover{color:var(--accent)}
         <div class="edu-icon" data-page-node-id="Aa4r5TsVVhdxTo83TwBVs0">🎓</div>
         <div data-page-node-id="CBKQRoIAnF4FR1RxrHwkuN">
           <div class="edu-school" data-page-node-id="wZqD6z9451862S9UytnoyI">郑州升达经贸管理学院</div>
-          <div class="edu-major" data-page-node-id="EdYwNvAqhRwxyGcrCqpRxk">翻译专业 · 本科 · 大二在读</div>
+          <div class="edu-major" data-page-node-id="EdYwNvAqhRwxyGcrCqpRxk">翻译专业 · 本科 · 大三在读</div>
         </div>
       </div>
       <div class="edu-tags" data-page-node-id="z8TfLN7NjdY3xz4DTkBYBY">
@@ -576,7 +629,7 @@ a:hover{color:var(--accent)}
     <div class="section-title" data-page-node-id="DO0pZ1Pq4JYhaYDMpaIMA8"><span class="bar" data-page-node-id="4TU9GHariluvG48HrajqDS"></span><div data-page-node-id="4r5p80teUNYBWr1sSdCbe6"><h2 data-page-node-id="zECQZb79TKi3KmY2Ox3UBh">技术分享与运营</h2><div class="en" data-page-node-id="ttRlsNe76ZePOncKPJ0Jhy">Sharing</div></div></div>
     <ul class="ops-list" data-page-node-id="0I1MGzNaOxbTQ3EzkhFKTy">
       <li class="reveal" data-page-node-id="gzlJBZEfQfZnywJdVKYt4t">依托<strong data-page-node-id="U8TuGNNqJxX2TGDhXLgLDn">翻译 + 全栈开发</strong>复合背景，在校内社团、科创工作室开展多场线下技术分享，覆盖零基础 AI 工具到进阶开发。</li>
-      <li class="reveal" data-page-node-id="9wSNGXZu7QuPRrpZZXAo91">联合发起<strong data-page-node-id="5jGGxtRaKMAgxxWrG3WRJM">「校园 AI&计算机交流社群」</strong>（网络工作室 · AI 小组），对接字节跳动火山引擎校园生态，完整设计社群 30 天落地行动计划，掌握线上社群维护、线下沙龙策划、教学素材制作全流程。</li>
+      <li class="reveal" data-page-node-id="9wSNGXZu7QuPRrpZZXAo91">联合发起<strong data-page-node-id="5jGGxtRaKMAgxxWrG3WRJM">「校园 AI&计算机交流社群」</strong>，对接字节跳动火山引擎校园生态，持续运营线上社群、策划线下沙龙并沉淀教学素材（课程体系与团队管理详见「实践经历」板块）。</li>
       <li class="reveal" data-page-node-id="9qTHzXvMnLD2maCMwEsvFz">长期在校内编程小组组织<strong data-page-node-id="nDI97yTtf5XzQdsl5SkhU9">刷题互助</strong>，帮助零基础同学入门编程、备赛。</li>
       <li class="reveal" data-page-node-id="ncyr6O1B5deGfJLULEjZAX">在 B 站（竹temple）与抖音（deque）持续输出技术内容，发布码题杯算法题解（鱼肠剑试锋芒、鱼肚里面掏出剑、括号序列、夜袭粮仓）与 AI 项目演示（融研智笔、智序）视频。</li>
     </ul>
@@ -675,7 +728,6 @@ document.querySelectorAll('.section-title').forEach(title=>{
   arrow.textContent = '▾';
   title.appendChild(arrow);
   const section = title.closest('.section');
-  section.classList.add('collapsed');
   title.addEventListener('click',()=>{
     section.classList.toggle('collapsed');
     if(!section.classList.contains('collapsed')){
