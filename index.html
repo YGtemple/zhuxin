@@ -184,6 +184,15 @@ a:hover{color:var(--accent)}
 .drama-card.card-collapsed .dc-tags{display:none}
 .exp-card.card-collapsed .timeline-desc,.exp-card.card-collapsed .exp-tags{display:none}
 
+/* 子分类（.subtitle）整组折叠 */
+.subtitle{cursor:pointer;user-select:none}
+.subtitle:hover{color:var(--accent-text)}
+.group-fold{margin-left:auto;display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;background:transparent;color:var(--text-3);transition:transform .2s ease,background .2s ease,color .2s ease;font-size:13px;line-height:1;flex-shrink:0}
+.subtitle:hover .group-fold{background:var(--accent-soft);color:var(--accent-text)}
+.subtitle.group-collapsed .group-fold{transform:rotate(-90deg)}
+.subtitle.group-collapsed{margin-bottom:10px}
+.group-hidden{display:none !important}
+
 /* 时间线 */
 .timeline{list-style:none;position:relative;padding-left:24px}
 .timeline::before{content:'';position:absolute;left:6px;top:6px;bottom:6px;width:1.5px;background:var(--border-strong)}
@@ -861,6 +870,29 @@ function bindCardFold(card, header){
 document.querySelectorAll('.project-card').forEach(card=>bindCardFold(card, card.querySelector('.project-header')));
 document.querySelectorAll('.drama-card').forEach(card=>bindCardFold(card, card.querySelector('.dc-name')));
 document.querySelectorAll('.exp-card').forEach(card=>bindCardFold(card, card.querySelector('.timeline-title')));
+
+// 子分类（.subtitle）整组折叠
+document.querySelectorAll('.subtitle').forEach(sub=>{
+  const members = [];
+  let el = sub.nextElementSibling;
+  while(el && !el.classList.contains('subtitle')){ members.push(el); el = el.nextElementSibling; }
+  const arrow = document.createElement('span');
+  arrow.className = 'group-fold';
+  arrow.textContent = '▾';
+  arrow.setAttribute('aria-hidden', 'true');
+  sub.appendChild(arrow);
+  sub.setAttribute('role', 'button');
+  sub.tabIndex = 0;
+  sub.setAttribute('title', '点击折叠 / 展开该分类');
+  sub.setAttribute('aria-expanded', 'true');
+  const toggle = ()=>{
+    const collapsed = sub.classList.toggle('group-collapsed');
+    members.forEach(m=>m.classList.toggle('group-hidden', collapsed));
+    sub.setAttribute('aria-expanded', String(!collapsed));
+  };
+  sub.addEventListener('click', e=>{ if(e.target.closest('a')) return; toggle(); });
+  sub.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggle(); } });
+});
 </script>
 
 </body>
