@@ -793,7 +793,8 @@ document.querySelectorAll('.section-title').forEach(title=>{
   title.setAttribute('role','button');
   title.tabIndex = 0;
   title.setAttribute('title','点击折叠 / 展开');
-  title.setAttribute('aria-expanded','true');
+  section.classList.add('collapsed'); // 首屏所有板块默认折叠
+  title.setAttribute('aria-expanded','false');
   const toggle = ()=>{
     const collapsed = section.classList.toggle('collapsed');
     title.setAttribute('aria-expanded', String(!collapsed));
