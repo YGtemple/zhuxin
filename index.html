@@ -899,7 +899,9 @@ document.querySelectorAll('.subtitle').forEach(sub=>{
   sub.setAttribute('role', 'button');
   sub.tabIndex = 0;
   sub.setAttribute('title', '点击折叠 / 展开该分类');
-  sub.setAttribute('aria-expanded', 'true');
+  sub.classList.add('group-collapsed'); // 首屏默认整组折叠
+  members.forEach(m=>m.classList.add('group-hidden'));
+  sub.setAttribute('aria-expanded', 'false');
   const toggle = ()=>{
     const collapsed = sub.classList.toggle('group-collapsed');
     members.forEach(m=>m.classList.toggle('group-hidden', collapsed));
