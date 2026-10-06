@@ -2,9 +2,9 @@
 <html lang="zh-CN" data-page-node-id="z9gfZghVTGp2MsYItoKkXc">
 <head data-page-node-id="gqGqHF8vFreLOFmvsCGxEr">
 <meta charset="UTF-8" data-page-node-id="gjmJeSoNBVm6pjyyzeHUMd">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" data-page-node-id="GSgVBOZn5G9DAX8HcNE646">
-<title>王佳琦 · 个人简历</title>
-<meta name="description" content="翻译专业大三学生，C++ 算法竞赛 + Qt 桌面开发 + AI 应用全栈开发 + 游戏开发学习实践。" data-page-node-id="YZrggqIo8To9wXPwjceHma">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="GSgVBOZn5G9DAX8HcNE646">
+<title>竹心 · 个人简历</title>
+<meta name="description" content="竹心，郑州升达经贸管理学院翻译专业大三；写算法、做桌面软件与 AI 应用，也做游戏和 AI 短剧。" data-page-node-id="YZrggqIo8To9wXPwjceHma">
 <link rel="preconnect" href="https://fonts.googleapis.com" data-page-node-id="lbt5xHZjJolb6tAe5V0bsu">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin data-page-node-id="7royZvFrUcgep2xTkoDE8F">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" data-page-node-id="g59icasgvbHOq37eDvcrGO">
@@ -35,7 +35,7 @@
 }
 
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:70px}
 body{
   font-family:var(--font-zh);
   background:var(--bg);
@@ -97,8 +97,8 @@ a:hover{color:var(--accent)}
 .hero-name{font-size:34px;font-weight:900;letter-spacing:0.01em;line-height:1.15;font-family:var(--font-zh);color:var(--text)}
 @media(min-width:768px){.hero-name{font-size:44px}}
 .hero-name .dot{color:var(--accent)}
-.hero-contact{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:13px;color:var(--text-3)}
-.hero-contact a{color:var(--text-3)}
+.hero-contact{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:13px;color:var(--text-2)}
+.hero-contact a{color:var(--text-2)}
 .hero-contact a:hover{color:var(--accent)}
 .hero-contact .sep{color:var(--border-strong)}
 .hero-contact .ico{margin-right:4px}
@@ -169,14 +169,14 @@ a:hover{color:var(--accent)}
 .project-links a svg{width:14px;height:14px}
 
 /* 卡片单独折叠（项目 / 短剧 / 经历） */
-.card-fold{margin-left:auto;display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;background:transparent;color:var(--text-3);transition:transform .2s ease,background .2s ease,color .2s ease;font-size:13px;line-height:1;flex-shrink:0}
+.card-fold{margin-left:auto;display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:8px;background:var(--surface);color:var(--text-2);border:1px solid var(--border);transition:transform .2s ease,background .2s ease,color .2s ease,border-color .2s ease;font-size:13px;line-height:1;flex-shrink:0}
 .project-header{cursor:pointer;user-select:none}
 .project-header:hover .project-name{color:var(--accent-text)}
 .drama-card .dc-name{display:flex;align-items:center;gap:8px;cursor:pointer;user-select:none}
 .drama-card .dc-name:hover{color:var(--accent-text)}
 .exp-card .timeline-title{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;cursor:pointer;user-select:none}
 .exp-card .timeline-title:hover{color:var(--accent-text)}
-.project-header:hover .card-fold,.drama-card .dc-name:hover .card-fold,.exp-card .timeline-title:hover .card-fold{background:var(--accent-soft);color:var(--accent-text)}
+.project-header:hover .card-fold,.drama-card .dc-name:hover .card-fold,.exp-card .timeline-title:hover .card-fold{background:var(--accent-soft);color:var(--accent-text);border-color:var(--accent-soft-2)}
 .project-card.card-collapsed .card-fold,.drama-card.card-collapsed .card-fold,.exp-card.card-collapsed .card-fold{transform:rotate(-90deg)}
 .project-card.card-collapsed .project-header{margin-bottom:0}
 .project-card.card-collapsed .project-desc,.project-card.card-collapsed .project-meta,.project-card.card-collapsed .project-tags,.project-card.card-collapsed .project-links{display:none}
@@ -187,8 +187,8 @@ a:hover{color:var(--accent)}
 /* 子分类（.subtitle）整组折叠 */
 .subtitle{cursor:pointer;user-select:none}
 .subtitle:hover{color:var(--accent-text)}
-.group-fold{margin-left:auto;display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;background:transparent;color:var(--text-3);transition:transform .2s ease,background .2s ease,color .2s ease;font-size:13px;line-height:1;flex-shrink:0}
-.subtitle:hover .group-fold{background:var(--accent-soft);color:var(--accent-text)}
+.group-fold{margin-left:auto;display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:8px;background:var(--surface);color:var(--text-2);border:1px solid var(--border);transition:transform .2s ease,background .2s ease,color .2s ease,border-color .2s ease;font-size:13px;line-height:1;flex-shrink:0}
+.subtitle:hover .group-fold{background:var(--accent-soft);color:var(--accent-text);border-color:var(--accent-soft-2)}
 .subtitle.group-collapsed .group-fold{transform:rotate(-90deg)}
 .subtitle.group-collapsed{margin-bottom:10px}
 .group-hidden{display:none !important}
@@ -215,8 +215,9 @@ a:hover{color:var(--accent)}
 
 /* AI 短剧 */
 .drama-banner{background:linear-gradient(135deg,var(--accent-soft),var(--surface));border:1px solid var(--accent-soft-2);border-radius:var(--radius);padding:24px;margin-bottom:14px;box-shadow:var(--shadow-sm)}
-.drama-position{font-size:15px;line-height:1.8;color:var(--text);font-weight:600;margin-bottom:18px}
+.drama-position{font-size:15px;line-height:1.8;color:var(--text);font-weight:600;margin-bottom:10px}
 .drama-position b{color:var(--accent-text)}
+.drama-solo{font-size:13.5px;color:var(--text-2);line-height:1.8}
 .drama-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:18px}
 @media(min-width:768px){.drama-stats{grid-template-columns:repeat(4,1fr)}}
 .drama-stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 12px;text-align:center}
@@ -283,10 +284,23 @@ a:hover{color:var(--accent)}
   .project-card,.skill-card,.edu-card,.contact-item{box-shadow:none!important;border:1px solid #ccc!important;break-inside:avoid}
   .reveal{opacity:1!important;transform:none!important}
   .section.collapsed > .container > :not(.section-title){display:block!important}
-  .fold-arrow{display:none!important}
+  .fold-arrow,.card-fold,.group-fold{display:none!important}
+  .group-hidden{display:block!important}
+  .project-card.card-collapsed .project-desc,.project-card.card-collapsed .project-meta,.project-card.card-collapsed .project-tags,.project-card.card-collapsed .project-links,.drama-card.card-collapsed .dc-tags,.exp-card.card-collapsed .timeline-desc,.exp-card.card-collapsed .exp-tags{display:block!important}
   a{color:#000!important;text-decoration:underline!important}
   a[href]::after{content:' (' attr(href) ')'!important;font-size:9pt!important;color:#666!important}
 }
+
+/* 键盘焦点态 */
+.section-title,.project-header,.dc-name,.timeline-title,.subtitle,.hamburger,.back-top{outline:none}
+.section-title:focus-visible,.project-header:focus-visible,.dc-name:focus-visible,.timeline-title:focus-visible,.subtitle:focus-visible,.hamburger:focus-visible,.back-top:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:8px}
+
+/* 减弱动效 */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition-duration:.001ms!important;animation-duration:.001ms!important}
+}
+
 </style>
 </head>
 <body data-page-node-id="imSsJAGKSnmCD6CxsDMEBx">
@@ -295,7 +309,7 @@ a:hover{color:var(--accent)}
 
 <nav class="site-nav" id="navbar" data-page-node-id="5oN2KDIDCiDpB1eGcmNE8f">
   <div class="container nav-inner" data-page-node-id="nYe0qmQXrTaVlQFp96rHhj">
-    <a href="#hero" class="nav-brand" data-page-node-id="6DDYGavXZS09rFaw6Nc6Kj"><span class="nav-dot" data-page-node-id="aGKjIRdm50PgAI6zR2EMSl"></span>&lt;<b data-page-node-id="cYz4cBOevt1JTohRIkAHNy">王佳琦</b>/&gt;</a>
+    <a href="#hero" class="nav-brand" data-page-node-id="6DDYGavXZS09rFaw6Nc6Kj"><span class="nav-dot" data-page-node-id="aGKjIRdm50PgAI6zR2EMSl"></span>&lt;<b data-page-node-id="cYz4cBOevt1JTohRIkAHNy">竹心</b>/&gt;</a>
     <ul class="nav-links" id="navLinks" data-page-node-id="AXgcxgj6RnBwA6XgEnVcLo">
       <li data-page-node-id="mD3loEhZFMZkSyUYlMv1m3"><a href="#hero" data-section="hero" data-page-node-id="YZLK7btdAFR58ei7dsxKN8">首页</a></li>
       <li data-page-node-id="6sD6oBvS95JE7CBFG2ItBu"><a href="#skills" data-section="skills" data-page-node-id="LeUo5gF1PTUaKdyZ9SLP6B">技能</a></li>
@@ -306,7 +320,7 @@ a:hover{color:var(--accent)}
       <li data-page-node-id="Ba3fA7qFAlKWQmneB3tIEi"><a href="#awards" data-section="awards" data-page-node-id="nXzqS63941hOss6k8l3OQa">获奖</a></li>
       <li data-page-node-id="DSxJCNvlW0abfGxsU2JF6x"><a href="#contact" data-section="contact" data-page-node-id="5eflRMGLsnBjBXKBMAbdir">联系</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="菜单" data-page-node-id="t0CRrTDYOLSxmFB0ASywbh"><span data-page-node-id="cAq5jckbyFGHyeu0KHyGtr"></span><span data-page-node-id="rx7vDP8YVNhvgsh6Y69ex2"></span><span data-page-node-id="slQ3R93IICe2McKQw2AknE"></span></button>
+    <button class="hamburger" id="hamburger" aria-label="菜单" aria-expanded="false" aria-controls="mobileMenu" data-page-node-id="t0CRrTDYOLSxmFB0ASywbh"><span data-page-node-id="cAq5jckbyFGHyeu0KHyGtr"></span><span data-page-node-id="rx7vDP8YVNhvgsh6Y69ex2"></span><span data-page-node-id="slQ3R93IICe2McKQw2AknE"></span></button>
   </div>
 </nav>
 
@@ -326,9 +340,9 @@ a:hover{color:var(--accent)}
 <section class="hero" id="hero" data-page-node-id="s6iBCQCnHtunWpAEOgYIgh">
   <div class="container" data-page-node-id="0VWD0Sv6A1dwc40jYraZFE">
     <div class="hero-top" data-page-node-id="wRUmWVIokSaiToVm64u8t5">
-      <div class="hero-avatar" data-page-node-id="mTnGArbKEj4qyzXc1yBXXW">王</div>
+      <div class="hero-avatar" data-page-node-id="mTnGArbKEj4qyzXc1yBXXW">竹</div>
       <div data-page-node-id="spKbFCvF7gLgErmmtTULGG">
-        <h1 class="hero-name" data-page-node-id="iut7zsspjZqWtEe5VrMLyA">王佳琦<span class="dot" data-page-node-id="oXrFww398u3iqqv967cFrO">.</span></h1>
+        <h1 class="hero-name" data-page-node-id="iut7zsspjZqWtEe5VrMLyA">竹心<span class="dot" data-page-node-id="oXrFww398u3iqqv967cFrO">.</span></h1>
       </div>
     </div>
     <div class="hero-contact" data-page-node-id="uiyAdEI7KcpYmvP9AO7s8l">
@@ -343,7 +357,7 @@ a:hover{color:var(--accent)}
     <div class="hero-divider" data-page-node-id="p5NCYrptYA2fKVsHEXpnHd"></div>
     <p class="hero-tagline"><span class="pulse"></span>翻译 × 编程 跨界实践者 <span class="sep">·</span> C++ 算法竞赛 <span class="sep">·</span> Qt 桌面开发 <span class="sep">·</span> AI 应用全栈 <span class="sep">·</span> AIGC 创作 <span class="sep">·</span> 真人写实 AI 短剧</p>
     <p class="hero-bio" data-page-node-id="EJF12ZH8ZExCnVzC9nO7gx">
-      郑州升达经贸管理学院翻译专业大三在读。以 C++ 参与算法竞赛（码蹄杯、百度之星省赛银奖），从 Qt 桌面开发到 AI 应用全栈开发，兼具游戏开发与 AIGC 创作能力；习惯用 vibe coding 把想法落地为 Web 应用、Agent Skill 与微信小游戏，并在 B 站 / 抖音持续输出算法题解与 AI 项目演示。
+      郑州升达经贸管理学院翻译专业大三。喜欢折腾有意思的东西——写算法、做桌面小工具、捣鼓 AI 应用，也玩游戏开发和 AI 短剧。习惯边学边做，把脑子里冒出来的想法，一个个做成能跑的小作品；偶尔在 B 站、抖音发点技术视频，记录折腾的过程。
     </p>
   </div>
 </section>
@@ -365,7 +379,7 @@ a:hover{color:var(--accent)}
       <div class="skill-card reveal" data-page-node-id="IfY0GGoVo9RB5NwBBGPoRW">
         <div class="skill-head" data-page-node-id="qfR9dC4uxExNTDys5JjCi6"><div class="skill-icon" data-page-node-id="oeauNhmdYzbAEulFQ66MtD">🎮</div><h3 data-page-node-id="wLcHGAGjY7mTxePK7i5qXb">游戏开发</h3></div>
         <p data-page-node-id="uWhJ7r8Xv6MftD6lm2I3F9">基于 Cocos Creator 3.8 + TypeScript 开发微信小游戏，掌握场景搭建、Spine 动画、分包加载与多 AI 工具协同开发流程。</p>
-        <div class="skill-tags" data-page-node-id="5APgfkyvYD5nClyTMKsUcP"><span class="highlight" data-page-node-id="PB7OCOnqmP3adZm2FXU1c9">Cocos Creator 3.8</span><span class="highlight" data-page-node-id="d1kkN79B9JYaSHCXCCZvlx">TypeScript</span><span data-page-node-id="1CjjIgqOfKbuZo0tWOlkf6">微信小游戏</span><span data-page-node-id="2CQPjF2RQ5icSruY4yzXi5">Unity</span><span data-page-node-id="WmEvVY2hckXTUMJJtFyxku">Spine</span></div>
+        <div class="skill-tags" data-page-node-id="5APgfkyvYD5nClyTMKsUcP"><span class="highlight" data-page-node-id="PB7OCOnqmP3adZm2FXU1c9">Cocos Creator 3.8</span><span class="highlight" data-page-node-id="d1kkN79B9JYaSHCXCCZvlx">TypeScript</span><span data-page-node-id="1CjjIgqOfKbuZo0tWOlkf6">微信小游戏</span><span data-page-node-id="WmEvVY2hckXTUMJJtFyxku">Spine</span></div>
       </div>
       <div class="skill-card reveal reveal-d1" data-page-node-id="vJZiJrGJzHzOKDoXedrHJp">
         <div class="skill-head" data-page-node-id="XYyMRBTUOOvtHGQFu61Gbk"><div class="skill-icon" data-page-node-id="Tzw4wUKz9u6XDEkMJOWts0">🧰</div><h3 data-page-node-id="EXUdP0l1RuXw1dE5tOsIhy">工程协作</h3></div>
@@ -386,27 +400,21 @@ a:hover{color:var(--accent)}
     <div class="section-title"><span class="bar"></span><div><h2>AI 短剧</h2><div class="en">Drama</div></div></div>
     <div class="drama-banner reveal">
       <p class="drama-position">核心方向：<b>真人写实风格 AI 短剧</b>（非动漫、非卡通），覆盖情感 / 都市 / 悬疑反转 / 年代 / 写实广告，以情感类为重点。</p>
-      <div class="drama-stats">
-        <div class="drama-stat"><b>59</b><span>正式项目</span></div>
-        <div class="drama-stat"><b>45</b><span>已产出成片</span></div>
-        <div class="drama-stat"><b>~26GB</b><span>素材与成片</span></div>
-        <div class="drama-stat"><b>6 步</b><span>标准化流水线</span></div>
-      </div>
-      <p class="drama-pipeline">流水线：01 剧本 → 02 资产 → 03 分镜 → 04 视频 → 05 成片 → 06 封面；成片统一 H.264 + AAC / yuv420p / +faststart，Windows 直接可播。</p>
+      <p class="drama-solo">从剧本、分镜、美术资产到视频生成与剪辑后期，均由本人独立完成。</p>
     </div>
 
     <div class="subtitle">代表作</div>
     <div class="drama-grid">
       <div class="drama-card reveal">
-        <div class="dc-name">《15元猪脚饭》系列（含《红棚倒了》）</div>
+        <div class="dc-name">《15元猪脚饭》</div>
         <div class="dc-tags"><span class="accent-tag">都市</span><span>市井情感</span><span>系列短剧</span></div>
       </div>
       <div class="drama-card reveal reveal-d1">
-        <div class="dc-name">《国家的孩子·三千孤儿入内蒙 AI 复刻》</div>
-        <div class="dc-tags"><span class="accent-tag">年代</span><span>纪实复刻</span><span>体量最大 · 22 个成片</span></div>
+        <div class="dc-name">《国家的孩子·三千孤儿入内蒙》</div>
+        <div class="dc-tags"><span class="accent-tag">年代</span><span>纪实复刻</span></div>
       </div>
       <div class="drama-card reveal">
-        <div class="dc-name">《医生好》（含重制版）</div>
+        <div class="dc-name">《医生好》</div>
         <div class="dc-tags"><span class="accent-tag">都市</span><span>医疗情感</span></div>
       </div>
       <div class="drama-card reveal reveal-d1">
@@ -455,7 +463,7 @@ a:hover{color:var(--accent)}
 
     <div class="project-card reveal" data-page-node-id="Z7bxMQ2kMGvBbU1xKVAspe">
       <div class="project-header" data-page-node-id="wJmt9Xcrl7VXUoF9MO2hc4"><span class="project-name" data-page-node-id="HkAHKuEYmOUR1xmmV6FCyE">融研智笔 — Web 端</span><span class="project-date" data-page-node-id="LeQWyEHZOnQ0bYl3Fklkfx">2026</span></div>
-      <p class="project-desc" data-page-node-id="rZvgxgIojgHfip66rdSVJc">英语写作 AI 智能体 Web 应用。HiAgent 后端实现作文批改、语法纠错、句式润色、范文生成四大功能，HTML/CSS/JS 响应式前端部署至 Netlify；覆盖七类考试评分标准，润色适配度 ≥92%、单篇响应 ≤60 秒，产出学术论文一篇。</p>
+      <p class="project-desc" data-page-node-id="rZvgxgIojgHfip66rdSVJc">英语写作 AI 智能体 Web 应用。HiAgent 后端实现作文批改、语法纠错、句式润色、范文生成四大功能，HTML/CSS/JS 响应式前端部署至 Netlify；覆盖七类考试评分标准，并产出学术论文一篇。</p>
       <div class="project-meta" data-page-node-id="lOoL8V8G7dYVwTCs2fJax1"><span data-page-node-id="TV4uaNIhvqGQMWn990GBXX">🌐 Web 应用</span><span data-page-node-id="VGbeQTiY34nFI1tCuBGmsA">📄 学术论文（郭万群教授指导）</span></div>
       <div class="project-tags" data-page-node-id="PkbPMzFcL9P9H37sqs0n4x"><span class="accent-tag" data-page-node-id="DihamJiCpCAgBxFIYxyk4L">HiAgent</span><span class="accent-tag" data-page-node-id="2kGTdevAY9DyITBSmfWu1C">HTML/CSS/JS</span><span data-page-node-id="5OLwnFZvCfHBESq0eLSNgX">Netlify</span><span data-page-node-id="TEBbc2sDN2PdxnHFQ5OczX">vibe coding</span></div>
       <div class="project-links" data-page-node-id="PQjMukfJD4rAIMnlwUSV8I"><a href="https://github.com/YGtemple/rongyan" target="_blank" rel="noopener" data-page-node-id="OKiDWVmsWujFX2nPdbPJbi"><svg viewBox="0 0 16 16" fill="currentColor" data-page-node-id="Mab4tL6qzc9CIHmNaBlhoQ"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" data-page-node-id="VScjmuZ1LmBi1cEWVjFmvQ"/></svg>GitHub</a></div>
@@ -480,7 +488,7 @@ a:hover{color:var(--accent)}
     <div class="project-card reveal" data-page-node-id="PBWX7RVoaxfuaOxJbFSWFY">
       <div class="project-header" data-page-node-id="0Jh0yR3OvndoFsag5hqllv"><span class="project-name" data-page-node-id="8AQOdFZUUJ9L8ZS6HTn722">智能题库与学习分析平台</span><span class="project-date" data-page-node-id="EsdTY8fKwhZUXXY7F0p1Tt">2026</span></div>
       <p class="project-desc" data-page-node-id="8SFBjpBRPKA3IEu2dSJBI0">面向大学生期末复习场景。独立完成从战略定位到技术架构的全链路设计，输出七份架构文档（战略定位、总体架构、API、数据库、AI 服务、安全合规、运维部署），技术栈规划 FastAPI + PostgreSQL（pgvector 向量检索）+ Redis + Celery + React，规划 MVP → 核心闭环 → 商业化 → 微服务升级四阶段演进路径。</p>
-      <div class="project-meta" data-page-node-id="IZKVMRD95J86VH2HKk3EPs"><span data-page-node-id="fqE26YpDv65dGDPcLuwo5H">📐 架构设计</span><span data-page-node-id="fcHuazYEakCJxfeBrr9NwW">📄 7 份技术文档</span></div>
+      <div class="project-meta" data-page-node-id="IZKVMRD95J86VH2HKk3EPs"><span data-page-node-id="fqE26YpDv65dGDPcLuwo5H">📐 架构设计（未落地）</span><span data-page-node-id="fcHuazYEakCJxfeBrr9NwW">📄 7 份技术文档</span></div>
       <div class="project-tags" data-page-node-id="SKV6ZV05yv6skHE7ukXVyB"><span class="accent-tag" data-page-node-id="8Bli5FhfxYvviWv6Fr9yhW">系统架构</span><span data-page-node-id="vukqFzr30TXPVVVQdDFepp">FastAPI</span><span data-page-node-id="pUs17NQvEJMye7EQpCA0lw">PostgreSQL</span><span data-page-node-id="umyAVuOFLCZujKNqVPbFMl">Redis</span><span data-page-node-id="dH8BMloWwQ0b0SwumDa0HJ">React</span><span data-page-node-id="f4HxZj5iK91UsQPxWgcrUv">API 设计</span></div>
       <div class="project-links" data-page-node-id="hwDQTapbXjRMAiZq2kDzeT"><a href="https://github.com/YGtemple/zhinengtiku" target="_blank" rel="noopener" data-page-node-id="34iFRL0RFW7x3YHNRgrd26"><svg viewBox="0 0 16 16" fill="currentColor" data-page-node-id="LaYGOV3i4rkjwsjSp2WSrd"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" data-page-node-id="pLM0aa0AHJQC8QoSBSrHW1"/></svg>GitHub</a></div>
     </div>
@@ -488,7 +496,7 @@ a:hover{color:var(--accent)}
     <div class="subtitle" data-page-node-id="3hS9xcisbkevV8vookyp8g">AI Agent · Skill 开发</div>
 
     <div class="project-card reveal" data-page-node-id="8J9QgJGpX3EICEGqVBuyHh">
-      <div class="project-header" data-page-node-id="vZ2PZdI4NAhfsRTMTahUvS"><span class="project-name" data-page-node-id="7sHbFm5E7pAtznpB4AOC1Y">终极写作（UItimateWriter）</span><span class="project-date" data-page-node-id="CR6LfCC5EmVpxxY96qXHlG">2026</span></div>
+      <div class="project-header" data-page-node-id="vZ2PZdI4NAhfsRTMTahUvS"><span class="project-name" data-page-node-id="7sHbFm5E7pAtznpB4AOC1Y">终极写作</span><span class="project-date" data-page-node-id="CR6LfCC5EmVpxxY96qXHlG">2026</span></div>
       <p class="project-desc" data-page-node-id="ggGYmoQMJXG4xVVwy9m7OX">单入口、按需加载的中文写作 Skill，把「去 AI 味」从玄学变成工程。三层去 AI 味体系（表层/话语层/认知层）、九大写作场景（小说网文/科研论文/公众号长文/报告总结/营销文案等）、文风复刻系统、选题与标题方法论、分级自检与质量门 + AI 痕迹扫描脚本，40+ 文件，MIT 开源。</p>
       <div class="project-meta" data-page-node-id="5qTryDGKkzhQdmC6ooWFZz"><span data-page-node-id="LmDAXKLN8hKCUCgIT8pt0u">🧩 AI Skill</span><span data-page-node-id="hLqTJi9fpEynBqv7McXcfG">📄 40+ 文件</span></div>
       <div class="project-tags" data-page-node-id="0AsmbPzKVBipccfLlbCkGh"><span class="accent-tag" data-page-node-id="5J0ys7Gn3aCPEUwqCpyb6w">Python</span><span class="accent-tag" data-page-node-id="zCc4AYVQUDLDtOyWclOT8u">Skill 工程</span><span data-page-node-id="slw8AM7K1XHfquFcX6MTDC">提示词工程</span><span data-page-node-id="zOp8FqZCq7AksaWNuJ6u1T">去 AI 味</span></div>
@@ -497,7 +505,7 @@ a:hover{color:var(--accent)}
 
     <div class="project-card reveal" data-page-node-id="xeMeWubSHg7UFQ1yQsMMzd">
       <div class="project-header" data-page-node-id="39nOxXXAdvI5MkZ4pezGso"><span class="project-name" data-page-node-id="oA0FqSzdyzNBndYUrpRJ8z">竹心一言（wechat-longform-article）· 公众号长文创作 Skill</span><span class="project-date" data-page-node-id="HUq0PReWGUR7rIT0XyimOa">2026</span></div>
-      <p class="project-desc" data-page-node-id="CTVUaawNMUS10KFsxET55z">面向 AI Agent 的公众号长文创作技能包：跨 10+ 平台调研（视频自动提取字幕）→ 2-4.5 万字原创长文（8-15 章节，第一人称署名「竹心一言」）→ 微信兼容 HTML 排版（22 类组件、10 套主题配色）→ 智能配图 + 三重自检，全流程一条流水线交付；同名公众号「竹心一言」已发布 10+ 篇，覆盖 AI 术语词典、行业观察、工具指南与个人成长，代表作《AI 地下词库》（5 万字科普）《从 Transformer 到大模型、Agent 时代》（229 个术语）《从 Transformer 到第四次工业革命》等。</p>
+      <p class="project-desc" data-page-node-id="CTVUaawNMUS10KFsxET55z">面向 AI Agent 的公众号长文创作技能包：跨 10+ 平台调研（视频自动提取字幕）→ 2-4.5 万字原创长文（8-15 章节，第一人称署名「竹心一言」）→ 微信兼容 HTML 排版（22 类组件、10 套主题配色）→ 智能配图 + 三重自检，全流程一站式交付；同名公众号「竹心一言」已发布 10+ 篇，覆盖 AI 术语词典、行业观察、工具指南与个人成长，代表作《AI 地下词库》（5 万字科普）《从 Transformer 到大模型、Agent 时代》（229 个术语）《从 Transformer 到第四次工业革命》等。</p>
       <div class="project-meta" data-page-node-id="bduBbbLhvTlm2fY3TMmRmF"><span data-page-node-id="ru00wbIjKALn3isFUPKlEG">🧩 Agent Skill</span><span data-page-node-id="idMEhZfnzHLXB4MXBYoVPG">📱 公众号已发布 10+ 篇</span></div>
       <div class="project-tags" data-page-node-id="jgRo3x9gN8PoW9TOpP5Mqt"><span class="accent-tag" data-page-node-id="LZVpLc9P1RtR73l4MrNU0v">Agent Skill</span><span class="accent-tag" data-page-node-id="i7khCGEt6At09Rk3rBfM26">HTML 排版</span><span data-page-node-id="DZBK4biFLVHSLOjtVzPyKM">多平台调研</span><span data-page-node-id="F6NTNlHpqh6mdJHtS2ZfSw">长文写作</span></div>
       <div class="project-links" data-page-node-id="Y8ab2BTGeSboTxuoaE5o5H"><a href="https://github.com/YGtemple/wechat-longform-article" target="_blank" rel="noopener" data-page-node-id="1hAWVkmvadD3JlJ3pF3JFo"><svg viewBox="0 0 16 16" fill="currentColor" data-page-node-id="xwCeCQpk6faGSAlerzOEAs"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" data-page-node-id="N6tYbI9aM9YmqPzRdRRJ92"/></svg>GitHub</a></div>
@@ -539,7 +547,7 @@ a:hover{color:var(--accent)}
 
     <div class="project-card reveal" data-page-node-id="cCE7I0S7oEsNbN9J1fCWgy">
       <div class="project-header" data-page-node-id="shEEVPe1lXrr89ihEhOREt"><span class="project-name" data-page-node-id="qt4mg0FWv9knMoSpaPSU6t">校园 AI 社群 — 招新宣传页</span><span class="project-date" data-page-node-id="FcPgt7ejWhxVME9VhJvnNb">2026</span></div>
-      <p class="project-desc" data-page-node-id="WQdHm5BQLoundEvYsoT2eE">校园 AI&计算机交流社群的招新宣传单页，含社群介绍、5 人团队简介、活动规划、火山引擎校园资源福利与群规，纯 HTML/CSS 响应式设计。</p>
+      <p class="project-desc" data-page-node-id="WQdHm5BQLoundEvYsoT2eE">校园 AI 与计算机交流社群的招新宣传单页，含社群介绍、5 人团队简介、活动规划、火山引擎校园资源福利与群规，纯 HTML/CSS 响应式设计。</p>
       <div class="project-meta" data-page-node-id="6CAHla4QxDRX9gWSoQEBJu"><span data-page-node-id="5tLj08FSc1IJjQym2PgubN">🌐 Web 单页</span><span data-page-node-id="FeH3AHYaKTg84nbuFxNAMo">🤝 社群运营</span></div>
       <div class="project-tags" data-page-node-id="zMRv6N5G0ZCEw7lh2jSWHG"><span class="accent-tag" data-page-node-id="9jqy3v3erwJaBNwGNy5DiW">HTML/CSS</span><span data-page-node-id="dCpE6wjZ4WEKLGm8xL0eNP">响应式</span><span data-page-node-id="eQKtH07E5DtuQiBRmIwrRG">团队介绍</span></div>
       <div class="project-links" data-page-node-id="uO8NIdu3qlaTvIlthORtrg"><a href="https://github.com/YGtemple/ComputeCommunicationAssociation" target="_blank" rel="noopener" data-page-node-id="Rgyst0y83OXtSICBHgYitQ"><svg viewBox="0 0 16 16" fill="currentColor" data-page-node-id="ybVUVYZpq0AiyR2RFtF6xT"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" data-page-node-id="IqKPUyXsJDc39lrWHLCxPo"/></svg>GitHub</a></div>
@@ -685,11 +693,6 @@ a:hover{color:var(--accent)}
         <div class="timeline-title" data-page-node-id="8A0ZrlRkLNv3T435Li89pp">码蹄杯程序设计大赛省赛 · <span class="award" data-page-node-id="O07ZwQa4FMN9iV5F6Uau2v">银奖</span></div>
         <p class="timeline-desc" data-page-node-id="eDuMyWfwrBXRNn2QzApY2p">以 C++ 参与，获省赛银奖。</p>
       </li>
-      <li class="timeline-item reveal" data-page-node-id="SiKwFJCF7573O7MdP9EnKF">
-        <span class="timeline-date" data-page-node-id="5B4TbJK3wN55qYSNzJRyoh">2026 · 程序设计</span>
-        <div class="timeline-title" data-page-node-id="53rjxYqphUxVbvVlZFR52Z">码蹄杯程序设计大赛国赛 · <span class="award" data-page-node-id="zlDqTnnCNHq1eikFwv9KAW">获奖</span></div>
-        <p class="timeline-desc" data-page-node-id="5qxb0e4V2fpyBiT3yIe2LP">省赛银奖晋级国赛。</p>
-      </li>
       <li class="timeline-item reveal" data-page-node-id="LeKuMjV8sBJSVsjpCDzqhM">
         <span class="timeline-date" data-page-node-id="N2oDG6vyph1q9LuEJ51nVd">2026.06 · 程序设计</span>
         <div class="timeline-title" data-page-node-id="AqcUuFN1AoMh76FSwVEGwW">第 22 届百度之星程序设计大赛省赛 · <span class="award" data-page-node-id="gVdPFjPNQbZv0zBqdVQ4Fp">银奖</span></div>
@@ -729,9 +732,9 @@ a:hover{color:var(--accent)}
     <div class="section-title" data-page-node-id="DO0pZ1Pq4JYhaYDMpaIMA8"><span class="bar" data-page-node-id="4TU9GHariluvG48HrajqDS"></span><div data-page-node-id="4r5p80teUNYBWr1sSdCbe6"><h2 data-page-node-id="zECQZb79TKi3KmY2Ox3UBh">技术分享与运营</h2><div class="en" data-page-node-id="ttRlsNe76ZePOncKPJ0Jhy">Sharing</div></div></div>
     <ul class="ops-list" data-page-node-id="0I1MGzNaOxbTQ3EzkhFKTy">
       <li class="reveal" data-page-node-id="gzlJBZEfQfZnywJdVKYt4t">依托<strong data-page-node-id="U8TuGNNqJxX2TGDhXLgLDn">翻译 + 全栈开发</strong>复合背景，在校内社团、科创工作室开展多场线下技术分享，覆盖零基础 AI 工具到进阶开发。</li>
-      <li class="reveal" data-page-node-id="9wSNGXZu7QuPRrpZZXAo91">联合发起<strong data-page-node-id="5jGGxtRaKMAgxxWrG3WRJM">「校园 AI&计算机交流社群」</strong>，对接字节跳动火山引擎校园生态，持续运营线上社群、策划线下沙龙并沉淀教学素材（课程体系与团队管理详见「实践经历」板块）。</li>
+      <li class="reveal" data-page-node-id="9wSNGXZu7QuPRrpZZXAo91">联合发起<strong data-page-node-id="5jGGxtRaKMAgxxWrG3WRJM">「校园 AI 与计算机交流社群」</strong>，对接字节跳动火山引擎校园生态，持续运营线上社群、策划线下沙龙并沉淀教学素材（课程体系与团队管理详见「实践经历」板块）。</li>
       <li class="reveal" data-page-node-id="9qTHzXvMnLD2maCMwEsvFz">长期在校内编程小组组织<strong data-page-node-id="nDI97yTtf5XzQdsl5SkhU9">刷题互助</strong>，帮助零基础同学入门编程、备赛。</li>
-      <li class="reveal" data-page-node-id="ncyr6O1B5deGfJLULEjZAX">在 B 站（竹temple）与抖音（deque）持续输出技术内容，发布码题杯算法题解（鱼肠剑试锋芒、鱼肚里面掏出剑、括号序列、夜袭粮仓）与 AI 项目演示（融研智笔、智序）视频。</li>
+      <li class="reveal" data-page-node-id="ncyr6O1B5deGfJLULEjZAX">在 B 站（竹temple）与抖音（deque）持续输出技术内容，发布码蹄杯算法题解（鱼肠剑试锋芒、鱼肚里面掏出剑、括号序列、夜袭粮仓）与 AI 项目演示（融研智笔、智序）视频。</li>
     </ul>
   </div>
 </section>
@@ -764,7 +767,7 @@ a:hover{color:var(--accent)}
 
 <footer class="site-footer" data-page-node-id="mxBmmKN9shTLpMfSReSAfN">
   <div class="container" data-page-node-id="Rx5z2dwc18TJ2RZ4Uld6tB">
-    <p class="footer-text" data-page-node-id="6n7L7WrBPwuOYUWvoNrUsW">&copy; 2026 王佳琦（竹心）· Built with vibe coding</p>
+    <p class="footer-text" data-page-node-id="6n7L7WrBPwuOYUWvoNrUsW">&copy; 2026 竹心 · Built with vibe coding</p>
   </div>
 </footer>
 
@@ -774,13 +777,15 @@ a:hover{color:var(--accent)}
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 hamburger.addEventListener('click',()=>{
-  hamburger.classList.toggle('active');
-  mobileMenu.classList.toggle('open');
+  const open = hamburger.classList.toggle('active');
+  mobileMenu.classList.toggle('open', open);
+  hamburger.setAttribute('aria-expanded', String(!!open));
 });
 mobileMenu.querySelectorAll('a').forEach(link=>{
   link.addEventListener('click',()=>{
     hamburger.classList.remove('active');
     mobileMenu.classList.remove('open');
+    hamburger.setAttribute('aria-expanded','false');
   });
 });
 
@@ -801,12 +806,15 @@ sections.forEach(section=>observer.observe(section));
 const navbar = document.getElementById('navbar');
 const scrollProgress = document.getElementById('scrollProgress');
 const backTop = document.getElementById('backTop');
+backTop.tabIndex = -1;
 window.addEventListener('scroll',()=>{
   navbar.classList.toggle('scrolled', window.scrollY > 10);
   const h = document.documentElement;
   const scrolled = h.scrollTop / (h.scrollHeight - h.clientHeight);
   scrollProgress.style.width = (scrolled * 100) + '%';
-  backTop.classList.toggle('show', window.scrollY > 500);
+  const st = window.scrollY > 500;
+  backTop.classList.toggle('show', st);
+  backTop.tabIndex = st ? 0 : -1;
 });
 backTop.addEventListener('click',()=>{ window.scrollTo({top:0,behavior:'smooth'}); });
 
@@ -830,14 +838,22 @@ document.querySelectorAll('.section-title').forEach(title=>{
   const arrow = document.createElement('span');
   arrow.className = 'fold-arrow';
   arrow.textContent = '▾';
+  arrow.setAttribute('aria-hidden','true');
   title.appendChild(arrow);
   const section = title.closest('.section');
-  title.addEventListener('click',()=>{
-    section.classList.toggle('collapsed');
-    if(!section.classList.contains('collapsed')){
+  title.setAttribute('role','button');
+  title.tabIndex = 0;
+  title.setAttribute('title','点击折叠 / 展开');
+  title.setAttribute('aria-expanded','true');
+  const toggle = ()=>{
+    const collapsed = section.classList.toggle('collapsed');
+    title.setAttribute('aria-expanded', String(!collapsed));
+    if(!collapsed){
       section.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
     }
-  });
+  };
+  title.addEventListener('click',()=>toggle());
+  title.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggle(); } });
 });
 
 // 卡片单独折叠（项目 / 短剧 / 经历）
