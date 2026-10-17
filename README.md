@@ -1,71 +1,40 @@
-# zhuxin · 个人简历与作品集单页网站
+<div align="right">
 
-> 一句话简介：纯 HTML+CSS+JS 单文件静态简历与作品集网站
+**[English](README.md)** · [简体中文](README.zh-CN.md)
 
-## 一、项目概述与定位
+</div>
 
-本仓库是一个**个人简历与作品集的纯静态单页网站**，单个 `index.html` 内含全部结构、样式与脚本，无后端依赖，可直接用浏览器打开或部署到 GitHub Pages / Netlify / Vercel / Cloudflare Pages。
+# zhuxin
 
-它的用途是作为求职、实习、社群展示的"个人名片"，系统展示专业技能、项目经历、教育背景、竞赛获奖、技术分享与运营经历。页面为现代化卡片式设计，配合渐变、阴影、标签云与平滑滚动。
+A résumé and portfolio site in a single HTML file.
 
-> 说明：原仓库 README 中含姓名、邮箱、即时通讯账号、所在地等个人联系方式，按隐私要求本说明不复述；页面"联系方式"板块本身为作者自行展示渠道，阅读 `index.html` 可见。
+<sub>HTML · no build step</sub>
 
-## 二、功能与页面板块
+---
 
-1. **响应式导航栏**：固定顶部，锚点平滑滚动，滚动时自动高亮当前板块（首页/技能/项目/教育/获奖/联系）。
-2. **个人简介区**：头像、基本信息、个人陈述（专业背景+技术方向+核心能力）。
-3. **专业技能（五大方向）**，每方向配技术栈标签云：
-   - **算法竞赛**：C++、STL、C、数据结构（栈/队列/链表/哈希）、排序/二分/双指针、前缀和/差分、快速幂/取模、组合数学/容斥、位运算；
-   - **全栈开发**：Qt 6.7.0、HTML/CSS/JS、HiAgent 工作流、Agent Skill 开发、RESTful API、Netlify 部署、架构文档；
-   - **游戏开发**：Cocos Creator 3.8、TypeScript、微信小游戏、Unity、Spine；
-   - **工程协作**：GitHub 协作、扣子/HiAgent、Linux 基础、Obsidian、知识库搭建；
-   - **AIGC 内容创作**：ComfyUI、提示词工程、SDXL/FLUX、视频生成、动漫短剧、分镜脚本、LoRA。
-4. **项目经历卡片**：每个项目含时间、描述、技术栈、亮点徽章。列出五个项目——
-   - **智言（TEDify V2）**：面向路演/面试/会议/公开演讲的表达训练系统（对应 zhiyan 仓库）；
-   - **融研智笔（Web 端）**：英语写作 AI 智能体 Web 应用，HiAgent 后端 + HTML 前端，覆盖七类考试评分标准；
-   - **智序（AI 日程助手）**：AI 创造力大赛参赛作品，纯前端单 HTML 实现，14 项升级（对应 zhixu 仓库）；
-   - **长隆灵犀（AI 智慧伴游）**：AI 先锋未来人才大赛作品，游客情绪驱动的实时伴游 Agent（对应 changlong 仓库）；
-   - **智能题库与学习分析平台**：面向大学生期末复习，含七份架构文档与四阶段演进路径。
-5. **教育经历**：学校、专业、在读状态。
-6. **竞赛获奖**：码蹄杯、百度之星省赛银奖、蓝桥杯等。
-7. **技术分享与运营**：社群运营、技术分享、内容创作经历。
-8. **联系方式区**。
+## What it is
 
-## 三、技术栈
+One self-contained page: profile, projects and contact. No framework, no bundler, no dependencies — open the file and it works.
 
-| 类别 | 技术 |
-|---|---|
-| 结构 | HTML5 语义化标签 |
-| 样式 | CSS3（Flexbox、Grid、动画、渐变、响应式媒体查询） |
-| 交互 | 原生 JavaScript（平滑滚动、导航高亮） |
-| 图标 | 内联 SVG / Unicode |
-| 字体 | 系统字体栈 |
-| 部署 | 任意静态托管平台 |
+## What is in the file
 
-## 四、目录结构
+- Responsive layout, with a narrow-screen reflow for phones
+- Project entries with links and short descriptions
+- Dark and light mode via CSS variables, remembered in `localStorage`
+- Contact details and links
 
-```
-zhuxin/
-├── index.html    # 主页面（约 81KB，内联全部内容、样式与脚本）
-└── README.md     # 项目说明文档（约 5.8KB）
-```
+## Running
 
-## 五、运行与使用
+Open `index.html`. To serve it:
 
 ```bash
-# 本地预览
-python3 -m http.server 8080   # 访问 http://localhost:8080
-# 或直接浏览器打开 index.html
+python -m http.server
 ```
 
-自定义：在 `index.html` 中搜索对应文本即可替换个人信息；新增项目复制一个项目卡片修改；新增技能在对应方向标签列表加一个 `<span>`。
+## Note
 
-## 六、数据/资源构成
+The page was built to be readable on a phone as well as a desktop, which is why the layout reflows to a single column and the long text fields wrap rather than clip.
 
-仅 2 个文本文件（`index.html`、`README.md`），**无图片、音视频、字体等二进制文件**（头像等以占位/内联形式处理）。
+## License
 
-## 七、项目特点
-
-- **单文件零依赖**：一个 HTML 即可带走，便于分享与部署。
-- **作品集串联**：把作者多个独立项目（智言/智序/长隆灵犀等）汇总成一张能力地图，可作为理解整个 GitHub 账号项目矩阵的入口。
-- **响应式**：桌面/平板/手机均自适应。
+MIT
